@@ -55,8 +55,6 @@
         "stylelint-config-standard-scss": "^10.0.0",
         "stylelint-formatters-html": "^1.1.0",
         "stylelint-order": "^6.0.3",
-        "sass": "^1.68.0",
-        "sass-loader": "^12.3.0",
         "ts-jest": "^28.0.3",
         "ts-node": "^10.8.0",
         "typescript": "^5.2.2",
