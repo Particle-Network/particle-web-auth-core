@@ -1,0 +1,20 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    grid-gap: 30px;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    :global {
+        color: #000;
+        .item {
+            iframe {
+                border: none;
+            }
+        }
+    }
+}

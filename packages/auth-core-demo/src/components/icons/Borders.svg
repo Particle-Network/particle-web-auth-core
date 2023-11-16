@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23">
+  <defs>
+    <style>
+      .t1686825294453-1,
+      .t1686825294453-2,
+      .t1686825294453-4 {
+        fill: none;
+      }
+
+      .t1686825294453-1,
+      .t1686825294453-2 {
+        stroke: currentColor;
+      }
+
+      .t1686825294453-2 {
+        stroke-width: 0.4px;
+        stroke-dasharray: 1 1;
+      }
+
+      .t1686825294453-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g transform="translate(-1314 -849)">
+    <g class="t1686825294453-1" transform="translate(1320 855)">
+      <rect class="t1686825294453-3" width="11" height="11" rx="3" />
+      <rect class="t1686825294453-4" x="0.5" y="0.5" width="10" height="10" rx="2.5" />
+    </g>
+    <g class="t1686825294453-2" transform="translate(1322 857)">
+      <rect class="t1686825294453-3" width="7" height="7" rx="0.4" />
+      <rect class="t1686825294453-4" x="0.2" y="0.2" width="6.6" height="6.6" rx="0.2" />
+    </g>
+  </g>
+</svg>
