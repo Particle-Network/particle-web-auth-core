@@ -7,6 +7,7 @@
         "start": "rm -rf .next && env-cmd -f .env.dev.local next dev -p 3299",
         "dev": "yarn start",
         "build": "yarn clean && env-cmd -f .env next build",
+        "build:staging": "yarn clean && env-cmd -f .env.staging.local next build",
         "deploy:dev": "./dev_deploy.sh"
     },
     "dependencies": {
@@ -14,8 +15,8 @@
         "@marsidev/react-turnstile": "^0.2.3",
         "@nbfe/react-color": "^0.3.0",
         "@particle-network/aa": "^1.2.0",
-        "@particle-network/auth-core-modal": "^1.0.0-alpha.9",
-        "@particle-network/connectkit": "^1.0.0-alpha.7",
+        "@particle-network/auth-core-modal": "^1.0.0",
+        "@particle-network/connectkit": "^1.0.0",
         "@svgr/webpack": "^8.1.0",
         "@zeit/next-css": "^1.0.1",
         "@zeit/next-less": "^1.0.1",
