@@ -1,4 +1,3 @@
-// SA 配置（客户端用） https://minijoy.feishu.cn/docx/DFkUdi9rbovXpzxN2uEc4pmRnYg
 const options = {
     BICONOMY: {
         SUPPORTED_CHAIN_IDS: [

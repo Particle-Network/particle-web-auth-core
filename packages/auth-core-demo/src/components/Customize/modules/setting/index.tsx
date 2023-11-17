@@ -400,7 +400,7 @@ const Setting = (props: Props) => {
                                         }
 
                                         let currentCustomStyle = customStyle as any;
-                                        // 加载当前主题
+                                        // load current theme
                                         if (!currentCustomStyle.logo) {
                                             currentCustomStyle = getThemeConfigFormData();
                                         }

@@ -172,7 +172,6 @@ export const payloadV4 = {
     },
 };
 
-// 判断的是否是JSON字符串
 export const isJson = (str: string) => {
     if (typeof str == 'string') {
         try {
@@ -212,9 +211,9 @@ export const toNumber = (value: unknown) => {
 };
 
 /**
- * 255颜色值转16进制颜色值
- * @param n 255颜色值
- * @returns hex 16进制颜色值
+ * 255 color value to hex color value
+ * @param n 255 color value
+ * @returns hex 16 color value
  */
 export const toHex = (n: number) => {
     return `${n > 15 ? '' : 0}${n.toString(16)}`;
@@ -228,8 +227,8 @@ export interface IColorObj {
 }
 
 /**
- * 颜色对象转化为16进制颜色字符串
- * @param colorObj 颜色对象
+ * color object to hex color string
+ * @param colorObj color object
  */
 export const toHexString = (colorObj: IColorObj) => {
     const { r, g, b, a = 1 } = colorObj;

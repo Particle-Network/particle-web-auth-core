@@ -35,7 +35,6 @@ export default function App({ Component, pageProps }: any) {
                     promptMasterPasswordSettingWhenLogin: 2,
                 },
                 customStyle: {
-                    // 默认可不传，会同步使用开发者网站body的字体
                     fontFamily: '"SF-Pro", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
                 },
                 wallet: {

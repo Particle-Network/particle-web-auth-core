@@ -1,9 +1,7 @@
 /* eslint-disable */
-
 const fs = require('fs');
 const path = require('path');
 
-// 解决 CDN使用rocket-loader时，所有的js采用的是异步加载，导致页面加载慢
 try {
     const distSrc = path.resolve(__dirname, '../dist');
 
