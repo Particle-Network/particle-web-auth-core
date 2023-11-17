@@ -1,6 +1,5 @@
 import { isMobile } from '@/utils/index';
 import { AuthCoreContextProvider } from '@particle-network/auth-core-modal';
-import { ConfigProvider } from 'antd';
 import { merge } from 'lodash';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -80,9 +79,7 @@ export default function App({ Component, pageProps }: any) {
                 <Component {...pageProps} />
             ) : (
                 <AuthCoreContextProvider options={authCoreOptions}>
-                    <ConfigProvider>
-                        <Component {...pageProps} />
-                    </ConfigProvider>
+                    <Component {...pageProps} />
                 </AuthCoreContextProvider>
             )}
         </>
