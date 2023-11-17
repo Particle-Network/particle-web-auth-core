@@ -12,6 +12,7 @@
         "dev:demo": "lerna run dev --scope auth-core-demo --stream",
         "deploy:dev:demo": "lerna run deploy:dev --scope auth-core-demo --stream",
         "rollback:dev:demo": "sh ./packages/auth-core-demo/dev_rollback.sh",
+        "deploy:production:demo": "./packages/auth-core-demo/production_deploy.sh",
         "build": "lerna run build",
         "test": "lerna run test",
         "prepare": "husky install",

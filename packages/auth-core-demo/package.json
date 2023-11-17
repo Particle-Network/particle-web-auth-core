@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "clean": "rm -rf .next && rm -rf dist",
-        "start": "rm -rf .next && env-cmd -f .env next dev -p 3299",
+        "start": "rm -rf .next && env-cmd -f .env.dev.local next dev -p 3299",
         "dev": "yarn start",
         "build": "yarn clean && env-cmd -f .env next build",
         "deploy:dev": "./dev_deploy.sh"
@@ -15,7 +15,7 @@
         "@nbfe/react-color": "^0.3.0",
         "@particle-network/aa": "^1.2.0",
         "@particle-network/auth-core-modal": "^1.0.0-alpha.9",
-        "@particle-network/connectkit": "^1.0.0-alpha.6",
+        "@particle-network/connectkit": "^1.0.0-alpha.7",
         "@svgr/webpack": "^8.1.0",
         "@zeit/next-css": "^1.0.1",
         "@zeit/next-less": "^1.0.1",

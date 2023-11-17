@@ -2,7 +2,11 @@
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
-const packageSrc = [path.join(__dirname, './packages/auth-core-demo/package.json')];
+const packageSrc = [
+    path.join(__dirname, './packages/auth-core-demo/package.json'),
+    path.join(__dirname, './packages/create-react-app-starter/package.json'),
+    path.join(__dirname, './packages/next-app-starter/package.json'),
+];
 
 (async () => {
     console.log('--START--');
