@@ -4347,31 +4347,6 @@
 
 "@particle-network/auth-core@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@particle-network/auth-core/-/auth-core-1.0.0-alpha.9.tgz#169d82855558e8a50ae7535740ee77852e21040b"
-  integrity sha512-Hb9m+UcEmZ6dux4zf6RPtIg7TgI3OrKxywwDv2gdlOC/GdYN0yr04SDw0ETmRK+Vv0kMsYIK+7D+YD4U5gIDpw==
-  dependencies:
-    "@aws-sdk/client-cognito-identity" "^3.58.0"
-    "@aws-sdk/client-kms" "^3.58.0"
-    "@aws-sdk/credential-providers" "^3.58.0"
-    "@ethereumjs/tx" "^4.2.0"
-    "@ethereumjs/util" "^8.1.0"
-    "@ethersproject/bignumber" "^5.7.0"
-    "@ethersproject/units" "^5.7.0"
-    "@metamask/eth-sig-util" "^7.0.0"
-    "@metamask/rpc-errors" "^6.0.0"
-    "@particle-network/chains" "*"
-    "@particle-network/thresh-sig" "^0.7.6"
-    "@solana/web3.js" "^1.73.0"
-    axios "^1.5.0"
-    base64url "^3.0.1"
-    bs58 "^5.0.0"
-    crypto-js "^4.1.1"
-    fast-json-stable-stringify "^2.1.0"
-    lzutf8 "^0.6.3"
-    uuid "^9.0.1"
-
-"@particle-network/auth-core@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
   resolved "https://registry.npmmirror.com/@particle-network/auth-core/-/auth-core-1.0.0-alpha.9.tgz#169d82855558e8a50ae7535740ee77852e21040b"
   integrity sha512-Hb9m+UcEmZ6dux4zf6RPtIg7TgI3OrKxywwDv2gdlOC/GdYN0yr04SDw0ETmRK+Vv0kMsYIK+7D+YD4U5gIDpw==
   dependencies:
@@ -4400,12 +4375,12 @@
   resolved "https://registry.npmjs.org/@particle-network/chains/-/chains-1.3.2.tgz"
   integrity sha512-OYJrYaRG1hrFSVr1LMulZRGjxqAbQocpvLE6V8SCMhIFP7g1kajTb2m5iLtkKrjByKZq4iIkopwJLFrUXvnIwA==
 
-"@particle-network/connectkit@^1.0.0-alpha.6":
-  version "1.0.0-alpha.6"
-  resolved "https://registry.npmjs.org/@particle-network/connectkit/-/connectkit-1.0.0-alpha.6.tgz"
-  integrity sha512-nDOfWzmniXmDJ4HqpPd+3eicSpPZMUwnhkqoOp3CNmNkLBImk+6BhgMdo8K+O4ngWeXBXjWgdoEkxDrK601KXw==
+"@particle-network/connectkit@^1.0.0-alpha.7":
+  version "1.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@particle-network/connectkit/-/connectkit-1.0.0-alpha.7.tgz#a80902c561fd6be423f967a72417536f9e97ecd1"
+  integrity sha512-9ZpSOXivl0uVNa/IdO3n9tr9ry3ubcfCOqg7OILXMw8WIoOyjsC1HOv4ftJbRyO21uT/RDOFXr6KUi4NzMHx4g==
   dependencies:
-    "@particle-network/auth-core-modal" "^1.0.0-alpha.7"
+    "@particle-network/auth-core-modal" "^1.0.0-alpha.9"
     "@particle-network/connectors" "^1.0.0-alpha.4"
     i18next "^22.0.6"
     qrcode "^1.5.1"
