@@ -1,13 +1,22 @@
+import { AuthCoreContextProvider } from '@particle-network/auth-core-modal';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     <React.StrictMode>
-        <App />
+        <AuthCoreContextProvider
+            options={{
+                projectId: 'Your Particle Project ID',
+                clientKey: 'Your Particle Project Client Key',
+                appId: 'Your Particle Project App ID',
+            }}
+        >
+            <App />
+        </AuthCoreContextProvider>
     </React.StrictMode>
 );
 

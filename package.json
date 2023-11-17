@@ -17,7 +17,7 @@
         "prepare": "husky install",
         "lint": "eslint packages/**/src --no-error-on-unmatched-pattern --ext .ts,.tsx,.less,.scss -c .eslintrc.json --fix",
         "ts-node": "ts-node",
-        "prettier": "prettier --write 'packages/*/src/**/*.{js,ts,tsx,css,less}' 'packages/*/pages/**/*.{js,ts,tsx,css,less}' 'packages/*/*.{json,js}'",
+        "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css,less,sass}'",
         "stylelint": "stylelint 'packages/*/src/**/*.{css,less,scss,sass}' --config .stylelintrc.cjs --fix",
         "lint-staged": "lint-staged",
         "upgrade:particle": "node updateVersion.cjs"
