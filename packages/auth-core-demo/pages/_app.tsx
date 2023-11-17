@@ -10,6 +10,7 @@ import '../styles/globals.scss';
 export const isServer = () => typeof window === 'undefined';
 
 if (!isServer()) {
+    // particle internal test, developer need remove this line.
     window.__PARTICLE_ENVIRONMENT__ = process.env.NEXT_PUBLIC_PARTICLE_ENV;
 }
 

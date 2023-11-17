@@ -27,3 +27,4 @@ yarn-error.log*
 
 dev_deploy.sh
 dev_rollback.sh
+production_deploy.sh

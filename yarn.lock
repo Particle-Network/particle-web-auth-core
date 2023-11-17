@@ -4317,7 +4317,7 @@
     hash.js "^1.1.7"
     uuidv4 "^6.2.13"
 
-"@particle-network/auth-core-modal@^1.0.0-alpha.7", "@particle-network/auth-core-modal@^1.0.0-alpha.9":
+"@particle-network/auth-core-modal@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"
   resolved "https://registry.yarnpkg.com/@particle-network/auth-core-modal/-/auth-core-modal-1.0.0-alpha.9.tgz#1abd11bef13ada7da569b2080c93638414acd64e"
   integrity sha512-OOH7GP+4MLMd5RI5j1FRALn2qPA9ex9Nn3P3gpEK1RfygG/hYdsZZeetsnm4OQYi0DhdrgwjNiGoRnZI5GL0eQ==
