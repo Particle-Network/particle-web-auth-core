@@ -1,17 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useConnect, useEthereum, useSolana } from '@particle-network/auth-core-modal';
 import './App.css';
 
 function App() {
+    const { connect, disconnect, connectionStatus } = useConnect();
+
+    // use for evm chains
+    const { address, chainId, provider, sendTransaction, signMessage, signTypedData } = useEthereum();
+
+    // use for solana chains
+    const { address: solanaAddress, signAndSendTransaction } = useSolana();
+
+    const handleConnect = async () => {
+        try {
+            await connect();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const handleDisconnect = async () => {
+        try {
+            await disconnect();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
+                {connectionStatus !== 'connected' && (
+                    <>
+                        <button className="btn" onClick={handleConnect}>
+                            {connectionStatus === 'disconnected' ? 'CONNECT' : connectionStatus.toUpperCase()}
+                        </button>
+                    </>
+                )}
+
+                {connectionStatus === 'connected' && (
+                    <>
+                        <button className="btn" onClick={handleDisconnect}>
+                            DISCONNECT
+                        </button>
+                    </>
+                )}
                 <p>
                     Edit <code>src/App.tsx</code> and save to reload.
                 </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
+                <a className="App-link" href="https://docs.particle.network" target="_blank" rel="noopener noreferrer">
+                    Learn AuthCore
                 </a>
             </header>
         </div>

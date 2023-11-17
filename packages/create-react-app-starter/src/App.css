@@ -36,3 +36,20 @@
         transform: rotate(360deg);
     }
 }
+
+.btn {
+    color: #fff;
+    border-color: #1890ff;
+    background: #1890ff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+    border-radius: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+    outline: 0;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    border: 1px solid #282c34;
+    font-size: 18px;
+}

@@ -1,6 +1,6 @@
 /* eslint-disable */
 const config = {
-  presets: ['next/babel'],
+    presets: ['next/babel'],
 };
 
 module.exports = config;
