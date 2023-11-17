@@ -80,7 +80,7 @@ export const ConnectDashboard = () => {
 
     const { connect, requestConnectCaptcha, connectionStatus } = useConnect();
 
-    const [oauthPrompt, setOAuthPrompt] = useState<'' | 'none' | 'consent' | 'select_account'>('consent');
+    const [oauthPrompt, setOAuthPrompt] = useState<'none' | 'consent' | 'select_account'>('consent');
 
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -180,7 +180,7 @@ export const ConnectDashboard = () => {
             authorization,
             chain: connectChain,
             socialType: authType,
-            prompt: oauthPrompt as any,
+            prompt: oauthPrompt === 'none' ? undefined : oauthPrompt,
         })
             .then(() => {
                 message.success('Connect success');
