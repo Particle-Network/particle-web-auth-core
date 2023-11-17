@@ -14,7 +14,7 @@
         "@marsidev/react-turnstile": "^0.2.3",
         "@nbfe/react-color": "^0.3.0",
         "@particle-network/aa": "^1.2.0",
-        "@particle-network/auth-core-modal": "^1.0.0-alpha.7",
+        "@particle-network/auth-core-modal": "^1.0.0-alpha.9",
         "@particle-network/connectkit": "^1.0.0-alpha.6",
         "@svgr/webpack": "^8.1.0",
         "@zeit/next-css": "^1.0.1",
