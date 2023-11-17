@@ -70,7 +70,7 @@ const Home: NextPage = () => {
 
                     <a href="https://dashboard.particle.network" className={styles.card}>
                         <h2>Dashboard &rarr;</h2>
-                        <p>Learn about Next.js in an interactive course with quizzes!</p>
+                        <p>Manage your projects and team, View analytics data, Custom configuration.</p>
                     </a>
 
                     <a href="https://github.com/Particle-Network/particle-web-auth-core" className={styles.card}>
