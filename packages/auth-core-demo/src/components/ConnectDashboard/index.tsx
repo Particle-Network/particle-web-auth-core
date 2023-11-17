@@ -80,7 +80,7 @@ export const ConnectDashboard = () => {
 
     const { connect, requestConnectCaptcha, connectionStatus } = useConnect();
 
-    const [oauthPrompt, setOAuthPrompt] = useState<'none' | 'consent' | 'select_account'>('none');
+    const [oauthPrompt, setOAuthPrompt] = useState<'' | 'none' | 'consent' | 'select_account'>('consent');
 
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -180,7 +180,7 @@ export const ConnectDashboard = () => {
             authorization,
             chain: connectChain,
             socialType: authType,
-            prompt: oauthPrompt,
+            prompt: oauthPrompt as any,
         })
             .then(() => {
                 message.success('Connect success');
@@ -299,6 +299,7 @@ export const ConnectDashboard = () => {
                     onChange={setOAuthPrompt}
                     getPopupContainer={(triggerNode) => triggerNode.parentNode}
                     options={[
+                        { value: '', label: '' },
                         { value: 'none', label: 'none' },
                         { value: 'consent', label: 'consent' },
                         { value: 'select_account', label: 'select_account' },

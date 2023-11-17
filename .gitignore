@@ -17,3 +17,5 @@ dist/
 .next
 
 examples
+
+dev_deploy.sh
