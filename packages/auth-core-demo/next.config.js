@@ -3,6 +3,8 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'export',
+    distDir: 'dist',
     async rewrites() {
         return [
             {

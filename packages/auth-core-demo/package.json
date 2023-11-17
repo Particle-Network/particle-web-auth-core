@@ -6,7 +6,7 @@
         "clean": "rm -rf .next && rm -rf dist",
         "start": "rm -rf .next && env-cmd -f .env next dev -p 3299",
         "dev": "yarn start",
-        "build": "yarn clean && env-cmd -f .env next build && env-cmd -f .env next export -o dist",
+        "build": "yarn clean && env-cmd -f .env next build",
         "deploy:dev": "./dev_deploy.sh"
     },
     "dependencies": {
