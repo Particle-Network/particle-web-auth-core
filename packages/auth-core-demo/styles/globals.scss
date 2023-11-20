@@ -1,9 +1,5 @@
 @import '~antd/dist/antd.css';
-@font-face {
-    font-style: normal;
-    font-family: 'SF-Pro';
-    src: url('./fonts/SF-Pro-Text-Medium.ttf');
-}
+@import "./fonts/SF-Pro-Text/index.css";
 
 :root {
     --font-family: 'SF-Pro', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;

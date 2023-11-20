@@ -1,0 +1,73 @@
+@font-face {
+  font-family: "SF-Pro";
+  src: url("SF-Pro-Text-Regular.eot");
+  src: url("SF-Pro-Text-Regular.eot?#iefix") format("embedded-opentype"),
+    url("SF-Pro-Text-Regular.woff") format("woff"),
+    url("SF-Pro-Text-Regular.ttf") format("truetype"),
+    url("SF-Pro-Text-Regular.svg#SF Pro Text") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF-Pro";
+  src: url("SF-Pro-Text-Regular.eot");
+  src: url("SF-Pro-Text-Regular.eot?#iefix") format("embedded-opentype"),
+    url("SF-Pro-Text-Regular.woff") format("woff"),
+    url("SF-Pro-Text-Regular.ttf") format("truetype"),
+    url("SF-Pro-Text-Regular.svg#SF Pro Text") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "SF-Pro";
+  src: url("SF-Pro-Text-Medium.eot");
+  src: url("SF-Pro-Text-Medium.eot?#iefix") format("embedded-opentype"),
+    url("SF-Pro-Text-Medium.woff") format("woff"),
+    url("SF-Pro-Text-Medium.ttf") format("truetype"),
+    url("SF-Pro-Text-Medium.svg#SF Pro Text") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF-Pro";
+  src: url("SF-Pro-Text-Medium.eot");
+  src: url("SF-Pro-Text-Medium.eot?#iefix") format("embedded-opentype"),
+    url("SF-Pro-Text-Medium.woff") format("woff"),
+    url("SF-Pro-Text-Medium.ttf") format("truetype"),
+    url("SF-Pro-Text-Medium.svg#SF Pro Text") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "SF-Pro";
+  src: url("SF-Pro-Text-Bold.eot");
+  src: url("SF-Pro-Text-Bold.eot?#iefix") format("embedded-opentype"),
+    url("SF-Pro-Text-Bold.woff") format("woff"),
+    url("SF-Pro-Text-Bold.ttf") format("truetype"),
+    url("SF-Pro-Text-Bold.svg#SF Pro Text") format("svg");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF-Pro";
+  src: url("SF-Pro-Text-Bold.eot");
+  src: url("SF-Pro-Text-Bold.eot?#iefix") format("embedded-opentype"),
+    url("SF-Pro-Text-Bold.woff") format("woff"),
+    url("SF-Pro-Text-Bold.ttf") format("truetype"),
+    url("SF-Pro-Text-Bold.svg#SF Pro Text") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
