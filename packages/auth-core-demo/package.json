@@ -8,6 +8,7 @@
         "dev": "yarn start",
         "build": "yarn clean && env-cmd -f .env next build",
         "build:staging": "yarn clean && env-cmd -f .env.staging.local next build",
+        "build:dev": "yarn clean && env-cmd -f .env.dev.local next build",
         "deploy:dev": "./dev_deploy.sh"
     },
     "dependencies": {
