@@ -103,12 +103,13 @@ export const WalletInformation = () => {
         if (!erc4337) {
             return [];
         } else {
+            const version = erc4337.version || '1.0.0';
             if (erc4337.name === 'BICONOMY') {
-                return aaOptions.biconomy;
+                return aaOptions.accountContracts.BICONOMY.find((item) => item.version === version)?.chainIds || [];
             } else if (erc4337.name === 'CYBERCONNECT') {
-                return aaOptions.cyberConnect;
+                return aaOptions.accountContracts.CYBERCONNECT.find((item) => item.version === version)?.chainIds || [];
             } else {
-                return aaOptions.simple;
+                return aaOptions.accountContracts.SIMPLE.find((item) => item.version === version)?.chainIds || [];
             }
         }
     }, [erc4337]);
@@ -116,7 +117,7 @@ export const WalletInformation = () => {
     useEffect(() => {
         if (address) {
             let erc4337Config;
-            if (erc4337 && aaNetworkConfig.some((item) => item.chainId === chainInfo.id)) {
+            if (erc4337 && aaNetworkConfig.includes(chainInfo.id)) {
                 erc4337Config = erc4337;
             }
             getEVMPublicAddress({
@@ -135,9 +136,7 @@ export const WalletInformation = () => {
     const chainOptions = useMemo(() => {
         const options = chains.getAllChainInfos().filter((item) => item.name !== 'Solana');
         if (erc4337) {
-            return options.filter(
-                (item) => item.chainType === 'evm' && aaNetworkConfig.some((config) => config.chainId === item.id)
-            );
+            return options.filter((item) => item.chainType === 'evm' && aaNetworkConfig.includes(item.id));
         }
         return options;
     }, [erc4337, aaNetworkConfig]);

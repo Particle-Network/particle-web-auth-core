@@ -457,7 +457,11 @@
                         margin-top: 16px;
                         margin-bottom: 10px;
                         text-align: center;
-
+                        &.erc-4337 {
+                            .ant-select {
+                                width: 160px !important;
+                            }
+                        }
                         &.disable {
                             opacity: 0.3;
                             cursor: not-allowed;

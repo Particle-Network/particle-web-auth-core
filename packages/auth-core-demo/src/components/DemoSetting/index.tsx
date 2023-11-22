@@ -6,7 +6,7 @@ import { useCustomize, useEthereum } from '@particle-network/auth-core-modal';
 import { chains } from '@particle-network/chains';
 import { Button, Input, Modal, Select, Switch, message, notification } from 'antd';
 import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import aaOptions from 'src/config/erc4337';
 import styles from './index.module.scss';
 
@@ -45,7 +45,9 @@ function DemoSetting() {
 
     const FiatCoinOptions = ['USD', 'CNY', 'JPY', 'HKD', 'INR', 'KRW'];
 
-    const ERC4337Types = ['DISABLE', 'BICONOMY', 'CYBERCONNECT', 'SIMPLE'];
+    const ERC4337Types = useMemo(() => {
+        return ['DISABLE', 'BICONOMY 1.0.0', 'BICONOMY 2.0.0', 'CYBERCONNECT', 'SIMPLE'];
+    }, []);
 
     const router = useRouter();
 
@@ -58,24 +60,29 @@ function DemoSetting() {
 
     const { chainInfo, switchChain: evmSwitchChain } = useEthereum();
 
-    const onERC4337Change = (typeName: string) => {
+    const onERC4337Change = (typeName: string, version = '1.0.0') => {
         if (typeName === ERC4337Types[0]) {
             setERC4337(undefined);
         } else {
+            // window.aaOptions = aaOptions;
             const currentChain = chainInfo;
             //'SIMPLE' | 'CYBERCONNECT' | 'BICONOMY'
             let aaSupportChains;
+
             if (typeName === 'BICONOMY') {
-                aaSupportChains = aaOptions.biconomy?.map((item) => item.chainId);
+                aaSupportChains =
+                    aaOptions.accountContracts.BICONOMY?.find((item) => item.version === version)?.chainIds || [];
             } else if (typeName === 'CYBERCONNECT') {
-                aaSupportChains = aaOptions.cyberConnect?.map((item) => item.chainId);
+                aaSupportChains =
+                    aaOptions.accountContracts.CYBERCONNECT.find((item) => item.version === version)?.chainIds || [];
             } else {
-                aaSupportChains = aaOptions.simple?.map((item) => item.chainId);
+                aaSupportChains =
+                    aaOptions.accountContracts.SIMPLE.find((item) => item.version === version)?.chainIds || [];
             }
             if (aaSupportChains.includes(currentChain.id)) {
                 setERC4337({
                     name: typeName,
-                    version: '1.0.0',
+                    version,
                 });
             } else {
                 setEnableERC4337Prompt(typeName);
@@ -83,14 +90,27 @@ function DemoSetting() {
         }
     };
 
-    const switchChainAndEnableErc4337 = async (typeName: string) => {
+    const ercSelectValue = useMemo(() => {
+        if (!erc4337) {
+            return ERC4337Types[0];
+        } else if (ERC4337Types.includes(erc4337.name + ' ' + erc4337.version)) {
+            return erc4337.name + ' ' + erc4337.version;
+        } else {
+            return erc4337.name;
+        }
+    }, [erc4337, ERC4337Types]);
+
+    const switchChainAndEnableErc4337 = async (typeName: string, version = '1.0.0') => {
         let firstChainId;
         if (typeName === 'BICONOMY') {
-            firstChainId = aaOptions.biconomy[0].chainId;
+            firstChainId = aaOptions.accountContracts.BICONOMY.find((item) => item.version === version)
+                ?.chainIds[0] as number;
         } else if (typeName === 'CYBERCONNECT') {
-            firstChainId = aaOptions.cyberConnect[0].chainId;
+            firstChainId = aaOptions.accountContracts.CYBERCONNECT.find((item) => item.version === version)
+                ?.chainIds[0] as number;
         } else {
-            firstChainId = aaOptions.simple[0].chainId;
+            firstChainId = aaOptions.accountContracts.SIMPLE.find((item) => item.version === version)
+                ?.chainIds[0] as number;
         }
         const chain = chains.getEVMChainInfoById(firstChainId);
         if (chain) {
@@ -189,11 +209,20 @@ function DemoSetting() {
                         getPopupContainer={(triggerNode) => triggerNode.parentNode}
                     />
                 </div>
-                <div className="filter-item">
+                <div className="filter-item erc-4337">
                     <div className="filter-label">ERC-4337 (EVM)</div>
                     <Select
-                        value={!erc4337 ? ERC4337Types[0] : erc4337.name}
-                        onChange={onERC4337Change}
+                        value={ercSelectValue}
+                        onChange={(value) => {
+                            if (/\w.+\s\w.+/.test(value)) {
+                                const [name, version] = value.split(' ');
+                                // aa
+                                onERC4337Change(name, version);
+                            } else {
+                                // DISABLE
+                                onERC4337Change(value);
+                            }
+                        }}
                         style={{ width: 100 }}
                         options={ERC4337Types.map((item) => ({
                             label: item,

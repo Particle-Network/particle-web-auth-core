@@ -9,7 +9,7 @@ import {
     ScanOutlined,
     TwitterOutlined,
 } from '@ant-design/icons';
-import { AAWrapProvider, SendTransactionMode, SmartAccount, type SmartAccountType } from '@particle-network/aa';
+import { AAWrapProvider, SendTransactionMode, SmartAccount } from '@particle-network/aa';
 import { useConnect, useCustomize, useEthereum } from '@particle-network/auth-core-modal';
 import { Popover, Skeleton, Tag, message } from 'antd';
 import { isServer } from 'pages/_app';
@@ -54,7 +54,7 @@ function Home() {
                 });
                 window.web3 = new Web3(new AAWrapProvider(window.smartAccount, SendTransactionMode.UserSelect) as any);
             }
-            window.smartAccount.setSmartAccountType(erc4337.name as SmartAccountType);
+            window.smartAccount.setSmartAccountContract(erc4337);
         } else {
             window.web3 = new Web3(provider as any);
         }
