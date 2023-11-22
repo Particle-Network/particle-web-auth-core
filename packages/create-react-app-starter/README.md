@@ -23,7 +23,7 @@ pnpm start
 # or
 yarn start
 # or
-npm start
+npm run start
 ```
 
 ## Learn More

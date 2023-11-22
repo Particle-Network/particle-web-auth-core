@@ -51,6 +51,26 @@ function Transcation() {
             tx.recentBlockhash = blockhash;
             tx.lastValidBlockHeight = lastValidBlockHeight;
             tx.feePayer = new PublicKey(account!);
+
+            // // create array of instructions
+            // const instructions = [
+            //     SystemProgram.transfer({
+            //         fromPubkey: new PublicKey(account!),
+            //         toPubkey: new PublicKey(toAddress),
+            //         lamports: Number(amount || defAmount) * 1000000000,
+            //     }),
+            // ];
+
+            // // create v0 compatible message
+            // const messageV0 = new TransactionMessage({
+            //     payerKey: new PublicKey(account!),
+            //     recentBlockhash: blockhash,
+            //     instructions,
+            // }).compileToV0Message();
+
+            // // make a versioned transaction
+            // const transactionV0 = new VersionedTransaction(messageV0);
+
             const result = await solanaSignAndSendTransaction(tx, specifiedChainId);
             const chainInfo = chains.getSolanaChainInfoById(specifiedChainId || chainId);
             notification.success({

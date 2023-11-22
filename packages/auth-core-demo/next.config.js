@@ -44,6 +44,7 @@ const nextConfig = {
 
         // fix: more than one React when native link
         config.resolve.alias['react'] = path.resolve(__dirname, '../../node_modules/react');
+        config.resolve.alias['react-dom'] = path.resolve(__dirname, '../../node_modules/react-dom');
 
         return config;
     },
