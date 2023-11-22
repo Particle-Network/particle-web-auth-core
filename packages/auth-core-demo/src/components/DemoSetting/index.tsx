@@ -37,6 +37,7 @@ function DemoSetting() {
     const customTextArea = useRef(null);
 
     const [enableERC4337Prompt, setEnableERC4337Prompt] = useState<string>();
+    const [enableERC4337Version, setEnableERC4337Version] = useState<string>();
 
     // options
     const LanguageOptions = ['en', 'zh-cn', 'zh-tw', 'ja', 'ko'];
@@ -86,6 +87,7 @@ function DemoSetting() {
                 });
             } else {
                 setEnableERC4337Prompt(typeName);
+                setEnableERC4337Version(version);
             }
         }
     };
@@ -117,7 +119,7 @@ function DemoSetting() {
             await evmSwitchChain(firstChainId);
             setERC4337({
                 name: typeName,
-                version: '1.0.0',
+                version: version,
             });
             setEnableERC4337Prompt(undefined);
         }
@@ -269,7 +271,7 @@ function DemoSetting() {
                     open={!isNullish(enableERC4337Prompt)}
                     centered
                     onCancel={() => setEnableERC4337Prompt(undefined)}
-                    onOk={() => switchChainAndEnableErc4337(enableERC4337Prompt!)}
+                    onOk={() => switchChainAndEnableErc4337(enableERC4337Prompt!, enableERC4337Version)}
                 >
                     {`${enableERC4337Prompt} not support current chain, click OK to automatically switch chain and enable
                 ERC-4337.`}
