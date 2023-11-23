@@ -5,7 +5,7 @@
     "scripts": {
         "clean": "rm -rf .next && rm -rf dist",
         "start": "rm -rf .next && env-cmd -f .env.dev.local next dev -p 3299",
-        "dev": "yarn start",
+        "dev": "yarn clean && yarn start",
         "build": "yarn clean && env-cmd -f .env next build",
         "build:staging": "yarn clean && env-cmd -f .env.staging.local next build",
         "build:dev": "yarn clean && env-cmd -f .env.dev.local next build",

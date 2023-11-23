@@ -50,6 +50,9 @@ export const WalletInformation = () => {
         setLogoutLoading(true);
         try {
             await disconnect();
+            localStorage.clear();
+            sessionStorage.clear();
+            location.reload();
         } catch (error) {
             console.log('logout', error);
         }
