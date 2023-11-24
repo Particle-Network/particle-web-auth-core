@@ -55,7 +55,7 @@ function ERC4337SendERC20Tokens() {
                 });
             } else {
                 notification.error({
-                    message: 'Gasless Send Failure',
+                    message: 'Send UserOp Failure',
                     description: 'tx hash is null',
                 });
             }

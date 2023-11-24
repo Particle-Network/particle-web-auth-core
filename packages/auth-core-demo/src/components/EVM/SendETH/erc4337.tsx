@@ -13,7 +13,7 @@ function ERC4337SendETH() {
     const [ethAmount, setEthAmount] = useState<string>('');
 
     const { connected } = useConnect();
-    const { address, chainId, chainInfo } = useEthereum();
+    const { address, chainInfo } = useEthereum();
 
     const defReceiveAddress = '0x6Bc8fd522354e4244531ce3D2B99f5dF2aAE335e';
 
@@ -64,7 +64,7 @@ function ERC4337SendETH() {
             });
             if (txHash) {
                 notification.success({
-                    message: 'Send Transaction Success',
+                    message: 'Send UserOp Success',
                     description: txHash,
                     onClick: () => {
                         window.open(`${chainInfo?.blockExplorerUrl}/tx/${txHash}`);
@@ -72,7 +72,7 @@ function ERC4337SendETH() {
                 });
             } else {
                 notification.error({
-                    message: 'Send Failure',
+                    message: 'Send UserOp Failure',
                     description: 'tx hash is null',
                 });
             }

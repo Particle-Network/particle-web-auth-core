@@ -3,6 +3,7 @@ import { useConnect, useCustomize, useEthereum, useIsMounted } from '@particle-n
 import { Button, message } from 'antd';
 import { useEffect, useState } from 'react';
 import Erc4337GasModal from '../erc4337GasModal';
+import AASessionKey from './AASessionKey';
 import PersonalSign from './PersonalSign';
 import SendERC1155Tokens from './SendERC1155Tokens';
 import SendERC20Approve from './SendERC20Approve';
@@ -58,6 +59,7 @@ const EVM = () => {
                             <>
                                 <ERC4337SendETH />
                                 <ERC4337SendERC20Tokens />
+                                {erc4337.name === 'BICONOMY' && erc4337.version === '2.0.0' && <AASessionKey />}
                             </>
                         ) : (
                             <>
