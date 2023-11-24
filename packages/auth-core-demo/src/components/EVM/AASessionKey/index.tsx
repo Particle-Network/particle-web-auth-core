@@ -256,7 +256,7 @@ const AASessionKey = () => {
         } else {
             setLocalSessions(undefined);
         }
-    }, [connected, address, erc4337]);
+    }, [connected, address, erc4337, chainInfo]);
 
     const deleteLocalSession = async (localSession: LocalSession) => {
         const address = await window.smartAccount.getAddress();
@@ -360,8 +360,8 @@ const AASessionKey = () => {
                                 color: 'red',
                             }}
                         >
-                            Smart Account Session only support {PolygonMumbai.fullname} and {ComboTestnet.fullname},
-                            please switch chain first.
+                            This demo only support {PolygonMumbai.fullname} and {ComboTestnet.fullname}, please switch
+                            chain first.
                         </p>
                     )}
                 </div>
