@@ -43,7 +43,7 @@ const AASessionKey = () => {
     const [localSessions, setLocalSessions] = useState<LocalSession[]>();
 
     const { loading: createSessionsLoading, run: runCreateSessions } = useRequest(
-        async (chainId: number): Promise<string> => {
+        async (chainId: number, localSessions: LocalSession[]): Promise<string> => {
             const sessionSigner = Wallet.createRandom();
             const address = await window.smartAccount.getAddress();
 
@@ -61,6 +61,7 @@ const AASessionKey = () => {
                         ],
                     ],
                 },
+                ...localSessions.map((item) => item.sessions[0]),
             ];
             const feeQuotesResult = await window.smartAccount.createSessions(options);
 
@@ -89,13 +90,19 @@ const AASessionKey = () => {
                 events.emit('erc4337:prepareTransaction', feeQuotesResult);
             });
 
+            const newSession = feeQuotesResult.sessions?.find((item) =>
+                localSessions.every((local) => local.sessions[0].sessionKeyData != item.sessionKeyData)
+            );
+            if (!newSession) {
+                throw new Error('create session error');
+            }
             const sessionsData = {
                 [sessionSigner.address]: {
                     signer: {
                         privateKey: sessionSigner.privateKey,
                         address: sessionSigner.address,
                     },
-                    sessions: feeQuotesResult.sessions,
+                    sessions: [newSession],
                 },
             };
 
@@ -225,7 +232,7 @@ const AASessionKey = () => {
     );
 
     const startCreateSession = () => {
-        runCreateSessions(chainInfo.id);
+        runCreateSessions(chainInfo.id, localSessions ?? []);
     };
 
     const loadLocalSessions = async () => {
