@@ -7,7 +7,7 @@ import { ComboTestnet, PolygonMumbai } from '@particle-network/chains';
 import { useRequest } from 'ahooks';
 import { Button, Space, Table, message, notification } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
-import { Interface, Wallet, getBytes } from 'ethers';
+import { BrowserProvider, Contract, Interface, Wallet, formatUnits, getBytes } from 'ethers';
 import { useEffect, useMemo, useState } from 'react';
 
 type LocalSession = {
@@ -34,13 +34,15 @@ const erc1155TokenAddress = '0x909E30bdBCb728131E3F8d17150eaE740C904649';
 const AASessionKey = () => {
     const [fold, setFold] = useState(true);
 
-    const { chainInfo, address } = useEthereum();
+    const { chainInfo, address, provider } = useEthereum();
 
     const { connected } = useConnect();
 
     const { erc4337 } = useCustomize();
 
     const [localSessions, setLocalSessions] = useState<LocalSession[]>();
+
+    const [balance, setBalance] = useState<string>('0');
 
     const { loading: createSessionsLoading, run: runCreateSessions } = useRequest(
         async (chainId: number, localSessions: LocalSession[]): Promise<string> => {
@@ -213,6 +215,7 @@ const AASessionKey = () => {
                             window.open(`${chainInfo?.blockExplorerUrl}/tx/${txHash}`);
                         },
                     });
+                    getTokenBalance();
                 } else {
                     notification.error({
                         message: 'UserOp Send Failure',
@@ -248,15 +251,31 @@ const AASessionKey = () => {
         }
     };
 
+    const getTokenBalance = async () => {
+        if (chainInfo.id === PolygonMumbai.id || chainInfo.id === ComboTestnet.id) {
+            try {
+                const address = await window.smartAccount.getAddress();
+                const abi = ['function balanceOf(address account, uint256 id) view returns (uint256)'];
+                const contract = new Contract(erc1155TokenAddress, abi, new BrowserProvider(provider as any));
+                const balance = await contract.balanceOf(address, 1);
+                const result = formatUnits(balance, 0);
+                setBalance(result);
+            } catch (error) {
+                console.error('getTokenBalance error', error);
+            }
+        }
+    };
+
     useEffect(() => {
-        if (connected && address && erc4337?.name === 'BICONOMY' && erc4337.version === '2.0.0') {
+        if (connected && address && erc4337?.name === 'BICONOMY' && erc4337.version === '2.0.0' && provider) {
             setTimeout(() => {
                 loadLocalSessions();
+                getTokenBalance();
             }, 0);
         } else {
             setLocalSessions(undefined);
         }
-    }, [connected, address, erc4337, chainInfo]);
+    }, [connected, address, erc4337, chainInfo, provider]);
 
     const deleteLocalSession = async (localSession: LocalSession) => {
         const address = await window.smartAccount.getAddress();
@@ -317,7 +336,8 @@ const AASessionKey = () => {
                 <div className={`fold-content ${fold ? '' : 'display'}`}>
                     <label>
                         <p style={{ fontSize: 16, marginTop: 12 }}>
-                            Smart Account Session Key, you can sign userOp with session signer,{' '}
+                            Smart Account Session Key, you can sign userOp with session signer, this Demo shows the use
+                            of session key mint ERC-1155 token,{' '}
                             <a
                                 href="https://docs.particle.network/developers/account-abstraction/smart-account/session-key"
                                 target="_blank"
@@ -338,7 +358,12 @@ const AASessionKey = () => {
                                 };
                             })}
                             title={() => {
-                                return <div style={{ fontWeight: 600 }}>Local Sessions</div>;
+                                return (
+                                    <div style={{ fontWeight: 600, display: 'flex', justifyContent: 'space-between' }}>
+                                        Local Sessions
+                                        <div style={{ fontWeight: 400 }}>Balance: {balance}</div>
+                                    </div>
+                                );
                             }}
                         />
                     )}
