@@ -40,6 +40,7 @@ export default function App({ Component, pageProps }: any) {
                 },
                 wallet: {
                     visible: true,
+                    preload: true,
                 },
             },
             cacheOption
