@@ -373,7 +373,7 @@ const AASessionKey = () => {
                             <Button
                                 loading={createSessionsLoading}
                                 type="primary"
-                                disabled={!connected}
+                                disabled={!connected || !address}
                                 onClick={startCreateSession}
                             >
                                 Create Session

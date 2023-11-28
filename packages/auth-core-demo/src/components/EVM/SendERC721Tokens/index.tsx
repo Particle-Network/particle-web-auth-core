@@ -16,7 +16,7 @@ function SendERC721Tokens() {
     const [contractAddress, setContractAddress] = useState<string>('');
     const [tokenId, setTokenId] = useState<string>(defTokenId);
     const [specifiedChainId, setSpecifiedChainId] = useState<number>();
-    const { chainId, sendTransaction } = useEthereum();
+    const { chainId, sendTransaction, address } = useEthereum();
 
     const { connected } = useConnect();
 
@@ -124,7 +124,7 @@ function SendERC721Tokens() {
                         <p>Chain ID (optional)</p>
                         <InputNumber
                             min={1}
-                            placeholder={chainId.toString()}
+                            placeholder="Send the transaction to the specified chain"
                             precision={0}
                             readOnly={!!loading}
                             onChange={(e: any) => {
@@ -140,7 +140,7 @@ function SendERC721Tokens() {
 
                 <div className="form-submit">
                     <Button
-                        disabled={!connected}
+                        disabled={!connected || !address}
                         type="primary"
                         loading={loading === 1}
                         onClick={sendERC721Transaction}

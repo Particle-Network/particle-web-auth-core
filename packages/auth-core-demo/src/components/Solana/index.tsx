@@ -1,5 +1,5 @@
 import { SafetyCertificateTwoTone } from '@ant-design/icons';
-import { useConnect, useIsMounted, useSolana } from '@particle-network/auth-core-modal';
+import { useConnect, useSolana } from '@particle-network/auth-core-modal';
 import { Button, message } from 'antd';
 import SolanaAllTransaction from './AllTransaction';
 import SolanaSignMessage from './SignMessage';
@@ -11,7 +11,6 @@ const { useRequest } = require('ahooks');
 const Solana = () => {
     const { address, enable } = useSolana();
     const { connected } = useConnect();
-    const mounted = useIsMounted();
 
     const { run: createWallet, loading } = useRequest(enable, {
         manual: true,
@@ -37,14 +36,12 @@ const Solana = () => {
                 )}
             </div>
 
-            {mounted && (
-                <>
-                    <SolanaTransaction />
-                    <SignSolanaTransaction />
-                    <SolanaAllTransaction />
-                    <SolanaSignMessage />
-                </>
-            )}
+            <>
+                <SolanaTransaction />
+                <SignSolanaTransaction />
+                <SolanaAllTransaction />
+                <SolanaSignMessage />
+            </>
         </div>
     );
 };

@@ -18,7 +18,7 @@ function SendERC1155Tokens() {
     const [contractAddress, setContractAddress] = useState<string>('');
     const [ercAmount, setErcAmount] = useState(defErcAmount);
     const [specifiedChainId, setSpecifiedChainId] = useState<number>();
-    const { chainId, sendTransaction } = useEthereum();
+    const { chainId, sendTransaction, address } = useEthereum();
 
     const { connected } = useConnect();
 
@@ -144,7 +144,7 @@ function SendERC1155Tokens() {
                         <p>Chain ID (optional)</p>
                         <InputNumber
                             min={1}
-                            placeholder={chainId.toString()}
+                            placeholder="Send the transaction to the specified chain"
                             precision={0}
                             readOnly={!!loading}
                             onChange={(e: any) => {
@@ -160,7 +160,7 @@ function SendERC1155Tokens() {
 
                 <div className="form-submit">
                     <Button
-                        disabled={!connected}
+                        disabled={!connected || !address}
                         type="primary"
                         loading={loading === 1}
                         onClick={sendERC1155Transaction}

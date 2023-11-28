@@ -92,7 +92,12 @@ function SignTypedDatav4() {
                     <Checkbox className="uniq-checkbox" onChange={(t) => setUnique(t.target.checked)}>
                         Unique
                     </Checkbox>
-                    <Button loading={!!loading} type="primary" onClick={signTypedDataV4} disabled={!connected}>
+                    <Button
+                        loading={!!loading}
+                        type="primary"
+                        onClick={signTypedDataV4}
+                        disabled={!connected || !address}
+                    >
                         SIGN
                     </Button>
                 </div>

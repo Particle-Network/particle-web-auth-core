@@ -12,7 +12,7 @@ function SendETH() {
     const defEthAmount: string = '0.001';
     const [receiveAddress, setReceiveAddress] = useState<string>('');
     const [ethAmount, setEthAmount] = useState<string>('');
-    const { chainInfo, sendTransaction, chainId } = useEthereum();
+    const { chainInfo, sendTransaction, chainId, address } = useEthereum();
 
     const [specifiedChainId, setSpecifiedChainId] = useState<number>();
 
@@ -125,7 +125,7 @@ function SendETH() {
                         <p>Chain ID (optional)</p>
                         <InputNumber
                             min={1}
-                            placeholder={chainInfo.id.toString()}
+                            placeholder="Send the transaction to the specified chain"
                             precision={0}
                             readOnly={!!loading}
                             onChange={(e: any) => {
@@ -144,7 +144,7 @@ function SendETH() {
                         type="primary"
                         loading={loading === 1}
                         onClick={sendTransactionHandler}
-                        disabled={!connected}
+                        disabled={!connected || !address}
                     >
                         SEND TRANSACTION
                     </Button>
@@ -154,7 +154,7 @@ function SendETH() {
                             type="primary"
                             loading={loading === 2}
                             onClick={sendEIP1559TransactionHandler}
-                            disabled={!connected}
+                            disabled={!connected || !address}
                         >
                             SEND EIP1559 TRANSACTION
                         </Button>

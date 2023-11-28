@@ -130,7 +130,7 @@ function Transcation() {
                         <p>Chain ID (optional)</p>
                         <InputNumber
                             min={1}
-                            placeholder={chainId.toString()}
+                            placeholder="Send the transaction to the specified chain"
                             precision={0}
                             readOnly={!!loading}
                             onChange={(e: any) => {

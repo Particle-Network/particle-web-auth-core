@@ -1,5 +1,5 @@
 import { SafetyCertificateTwoTone } from '@ant-design/icons';
-import { useConnect, useCustomize, useEthereum, useIsMounted } from '@particle-network/auth-core-modal';
+import { useConnect, useCustomize, useEthereum } from '@particle-network/auth-core-modal';
 import { Button, message } from 'antd';
 import { useEffect, useState } from 'react';
 import Erc4337GasModal from '../erc4337GasModal';
@@ -21,8 +21,6 @@ const EVM = () => {
     const { chainInfo, address, enable } = useEthereum();
     const { connected } = useConnect();
     const [tron, setTron] = useState<boolean>(false);
-
-    const mounted = useIsMounted();
 
     const { run: createWallet, loading } = useRequest(enable, {
         manual: true,
@@ -53,31 +51,29 @@ const EVM = () => {
                     )}
                 </div>
 
-                {mounted && (
-                    <>
-                        {erc4337 ? (
-                            <>
-                                <ERC4337SendETH />
-                                <ERC4337SendERC20Tokens />
-                                {erc4337.name === 'BICONOMY' && erc4337.version === '2.0.0' && <AASessionKey />}
-                            </>
-                        ) : (
-                            <>
-                                <SendETH />
-                                {!tron && (
-                                    <>
-                                        <SendERC20Approve />
-                                        <SendERC20Tokens />
-                                        <SendERC721Tokens />
-                                        <SendERC1155Tokens />
-                                        <PersonalSign />
-                                        <SignTypedDatav4 />
-                                    </>
-                                )}
-                            </>
-                        )}
-                    </>
-                )}
+                <>
+                    {erc4337 ? (
+                        <>
+                            <ERC4337SendETH />
+                            <ERC4337SendERC20Tokens />
+                            {erc4337.name === 'BICONOMY' && erc4337.version === '2.0.0' && <AASessionKey />}
+                        </>
+                    ) : (
+                        <>
+                            <SendETH />
+                            {!tron && (
+                                <>
+                                    <SendERC20Approve />
+                                    <SendERC20Tokens />
+                                    <SendERC721Tokens />
+                                    <SendERC1155Tokens />
+                                    <PersonalSign />
+                                    <SignTypedDatav4 />
+                                </>
+                            )}
+                        </>
+                    )}
+                </>
             </div>
 
             <Erc4337GasModal />

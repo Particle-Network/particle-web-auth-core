@@ -15,7 +15,7 @@ function SendERC20Approve() {
     const [receiveAddress, setReceiveAddress] = useState<string>('');
     const [contractAddress, setContractAddress] = useState<string>('');
     const [ercAmount, setErcAmount] = useState<string>();
-    const { chainId, sendTransaction } = useEthereum();
+    const { chainId, sendTransaction, address } = useEthereum();
     const { connected } = useConnect();
     const [specifiedChainId, setSpecifiedChainId] = useState<number>();
 
@@ -123,7 +123,7 @@ function SendERC20Approve() {
                         <p>Chain ID (optional)</p>
                         <InputNumber
                             min={1}
-                            placeholder={chainId.toString()}
+                            placeholder="Send the transaction to the specified chain"
                             precision={0}
                             readOnly={!!loading}
                             onChange={(e: any) => {
@@ -138,7 +138,12 @@ function SendERC20Approve() {
                 </div>
 
                 <div className="form-submit">
-                    <Button type="primary" loading={loading === 1} onClick={sendERC20Approve} disabled={!connected}>
+                    <Button
+                        type="primary"
+                        loading={loading === 1}
+                        onClick={sendERC20Approve}
+                        disabled={!connected || !address}
+                    >
                         SEND
                     </Button>
                 </div>

@@ -90,7 +90,12 @@ function PersonalSign() {
 
                     <div className="form-submit">
                         <Checkbox onChange={(t) => setUnique(t.target.checked)}>Unique</Checkbox>
-                        <Button loading={!!loading} type="primary" onClick={personalSign} disabled={!connected}>
+                        <Button
+                            loading={!!loading}
+                            type="primary"
+                            onClick={personalSign}
+                            disabled={!connected || !address}
+                        >
                             SIGN
                         </Button>
                     </div>
