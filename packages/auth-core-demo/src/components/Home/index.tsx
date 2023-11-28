@@ -10,6 +10,7 @@ import {
     TwitterOutlined,
 } from '@ant-design/icons';
 import { AAWrapProvider, SendTransactionMode, SmartAccount } from '@particle-network/aa';
+import { type UserInfo } from '@particle-network/auth-core';
 import { useConnect, useCustomize, useEthereum } from '@particle-network/auth-core-modal';
 import { Popover, Skeleton, Tag, message } from 'antd';
 import { isServer } from 'pages/_app';
@@ -35,7 +36,11 @@ function Home() {
     useEffect(() => {
         setSocialConnectCallback({
             onError: (error: any) => {
+                console.log('SocialConnectCallback onError', error);
                 message.error(error.message);
+            },
+            onSuccess: (info: UserInfo) => {
+                console.log('SocialConnectCallback onSuccess', info);
             },
         });
         return () => {

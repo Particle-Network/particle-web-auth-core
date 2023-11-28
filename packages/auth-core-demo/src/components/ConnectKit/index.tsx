@@ -18,7 +18,6 @@ const ConnectKit = () => {
 
     return (
         <ModalProvider
-            walletSort={['Particle Auth', 'Wallet']}
             options={{
                 projectId: process.env.NEXT_PUBLIC_PROJECT_ID as string,
                 clientKey: process.env.NEXT_PUBLIC_CLIENT_KEY as string,
