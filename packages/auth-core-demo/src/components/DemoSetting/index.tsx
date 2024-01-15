@@ -13,7 +13,7 @@ import styles from './index.module.scss';
 export type UIMode = 'dark' | 'light' | 'auto';
 
 export type ERC4337Options = {
-    name: 'SIMPLE' | 'CYBERCONNECT' | 'BICONOMY';
+    name: string;
     version: string;
 };
 
@@ -47,7 +47,7 @@ function DemoSetting() {
     const FiatCoinOptions = ['USD', 'CNY', 'JPY', 'HKD', 'INR', 'KRW'];
 
     const ERC4337Types = useMemo(() => {
-        return ['DISABLE', 'BICONOMY 1.0.0', 'BICONOMY 2.0.0', 'CYBERCONNECT', 'SIMPLE'];
+        return ['DISABLE', 'BICONOMY 1.0.0', 'BICONOMY 2.0.0', 'CYBERCONNECT 1.0.0', 'LIGHT 1.0.2', 'SIMPLE 1.0.0'];
     }, []);
 
     const router = useRouter();
@@ -67,19 +67,11 @@ function DemoSetting() {
         } else {
             // window.aaOptions = aaOptions;
             const currentChain = chainInfo;
-            //'SIMPLE' | 'CYBERCONNECT' | 'BICONOMY'
-            let aaSupportChains;
 
-            if (typeName === 'BICONOMY') {
-                aaSupportChains =
-                    aaOptions.accountContracts.BICONOMY?.find((item) => item.version === version)?.chainIds || [];
-            } else if (typeName === 'CYBERCONNECT') {
-                aaSupportChains =
-                    aaOptions.accountContracts.CYBERCONNECT.find((item) => item.version === version)?.chainIds || [];
-            } else {
-                aaSupportChains =
-                    aaOptions.accountContracts.SIMPLE.find((item) => item.version === version)?.chainIds || [];
-            }
+            const aaSupportChains =
+                aaOptions.accountContracts[typeName as keyof typeof aaOptions.accountContracts]?.find(
+                    (item) => item.version === version
+                )?.chainIds || [];
             if (aaSupportChains.includes(currentChain.id)) {
                 setERC4337({
                     name: typeName,
@@ -103,17 +95,9 @@ function DemoSetting() {
     }, [erc4337, ERC4337Types]);
 
     const switchChainAndEnableErc4337 = async (typeName: string, version = '1.0.0') => {
-        let firstChainId;
-        if (typeName === 'BICONOMY') {
-            firstChainId = aaOptions.accountContracts.BICONOMY.find((item) => item.version === version)
-                ?.chainIds[0] as number;
-        } else if (typeName === 'CYBERCONNECT') {
-            firstChainId = aaOptions.accountContracts.CYBERCONNECT.find((item) => item.version === version)
-                ?.chainIds[0] as number;
-        } else {
-            firstChainId = aaOptions.accountContracts.SIMPLE.find((item) => item.version === version)
-                ?.chainIds[0] as number;
-        }
+        const firstChainId = aaOptions.accountContracts[typeName as keyof typeof aaOptions.accountContracts].find(
+            (item) => item.version === version
+        )?.chainIds[0] as number;
         const chain = chains.getEVMChainInfoById(firstChainId);
         if (chain) {
             await evmSwitchChain(firstChainId);
