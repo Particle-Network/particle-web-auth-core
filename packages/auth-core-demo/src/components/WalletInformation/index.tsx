@@ -104,13 +104,11 @@ export const WalletInformation = () => {
             return [];
         } else {
             const version = erc4337.version || '1.0.0';
-            if (erc4337.name === 'BICONOMY') {
-                return aaOptions.accountContracts.BICONOMY.find((item) => item.version === version)?.chainIds || [];
-            } else if (erc4337.name === 'CYBERCONNECT') {
-                return aaOptions.accountContracts.CYBERCONNECT.find((item) => item.version === version)?.chainIds || [];
-            } else {
-                return aaOptions.accountContracts.SIMPLE.find((item) => item.version === version)?.chainIds || [];
-            }
+            return (
+                aaOptions.accountContracts[erc4337.name as keyof typeof aaOptions.accountContracts].find(
+                    (item) => item.version === version
+                )?.chainIds || []
+            );
         }
     }, [erc4337]);
 
