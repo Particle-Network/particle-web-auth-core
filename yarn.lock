@@ -4370,10 +4370,10 @@
     lzutf8 "^0.6.3"
     uuid "^9.0.1"
 
-"@particle-network/chains@*":
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.3.6.tgz#940883f53d07997bbd7ba50817f25fb2eacdff57"
-  integrity sha512-zT9In4svIu5c01C881fhyHCklH+gJP9q73KodenLKYK87cSFp+79/NFdjPSkvAnwwdKPjPnAlxENfd9cyr30gg==
+"@particle-network/chains@*", "@particle-network/chains@^1.3.7":
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.3.7.tgz#10ab1eb7f3ae735be1d4083df417e2415efbe5ce"
+  integrity sha512-qdYAaR6jeGJSeT1xHZYC2ZnGISFmGZE4cct9966Ss+cDve/76wk4baVbsxhNvpoXq6hHMqE8pG98rgu/xCWM5g==
 
 "@particle-network/connectkit@^1.3.4":
   version "1.3.4"

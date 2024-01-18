@@ -65,10 +65,7 @@ const packageSrc = [
             newVersions.forEach(({ name, version }) => {
                 const reg = new RegExp(`"${name}": ".*"`, 'g');
                 packageContent = packageContent.replace(reg, (substring) => {
-                    let replacement = `"${name}": "^${version}"`;
-                    if (name.includes('@particle-network/chains')) {
-                        replacement = `"${name}": "*"`;
-                    }
+                    const replacement = `"${name}": "^${version}"`;
                     console.log(`${substring} -> ${replacement}`);
                     return replacement;
                 });
