@@ -4345,6 +4345,34 @@
     react-shadow "^20.4.0"
     uuid "^8.3.2"
 
+"@particle-network/auth-core-modal@^1.3.5":
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/@particle-network/auth-core-modal/-/auth-core-modal-1.3.5.tgz#ac5f39e047ad329930c5e796b4ae25c22a36d56e"
+  integrity sha512-OJppa9K6oQRNufjjffQi+ksJdEvIZ2AbY/Snjze1ixQucr6ze7jqKqI55ulQ13FUV5SgOukypnsJ220iP1uoMQ==
+  dependencies:
+    "@particle-network/analytics" "^1.0.1"
+    "@particle-network/auth-core" "^1.3.4"
+    "@particle-network/wallet" "^1.3.3"
+    "@solana/spl-token" "^0.2.0"
+    ahooks "^3.7.8"
+    antd "^4"
+    bn.js "^5.2.1"
+    country-flag-icons "^1.4.26"
+    dayjs "^1.11.7"
+    ethjs-unit "^0.1.6"
+    i18next "^23.2.3"
+    json-toy "^2.0.2"
+    libphonenumber-js "^1.10.36"
+    lodash "^4.17.21"
+    lottie-react "^2.4.0"
+    lzutf8 "^0.6.2"
+    numbro "^2.3.6"
+    qs "^6.10.3"
+    react-copy-to-clipboard "^5.1.0"
+    react-i18next "^13.3.0"
+    react-shadow "^20.4.0"
+    uuid "^8.3.2"
+
 "@particle-network/auth-core@^1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@particle-network/auth-core/-/auth-core-1.3.3.tgz#ab2d91aeddf1e6a1278871b2d29cf38961c2e356"
@@ -4370,10 +4398,40 @@
     lzutf8 "^0.6.3"
     uuid "^9.0.1"
 
-"@particle-network/chains@*", "@particle-network/chains@^1.3.7":
+"@particle-network/auth-core@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@particle-network/auth-core/-/auth-core-1.3.4.tgz#a0c647ad6be3081fd38328b535e99b8647176be2"
+  integrity sha512-c/KTauYCrrzAq3EgXU0utzsMm+LtzX1bqGZmvlzl0iHb4vwcXQTiYmhNFyoTHYwKcqGHiKQWIF/9fR3CP8Rutw==
+  dependencies:
+    "@aws-sdk/client-cognito-identity" "^3.58.0"
+    "@aws-sdk/client-kms" "^3.58.0"
+    "@aws-sdk/credential-providers" "^3.58.0"
+    "@ethereumjs/tx" "^4.2.0"
+    "@ethereumjs/util" "^8.1.0"
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/units" "^5.7.0"
+    "@metamask/eth-sig-util" "^7.0.0"
+    "@metamask/rpc-errors" "^6.0.0"
+    "@particle-network/chains" ">=1.3.8"
+    "@particle-network/thresh-sig" "^0.7.8"
+    "@solana/web3.js" "^1.73.0"
+    axios "^1.5.0"
+    base64url "^3.0.1"
+    bs58 "^5.0.0"
+    crypto-js "^4.1.1"
+    fast-json-stable-stringify "^2.1.0"
+    lzutf8 "^0.6.3"
+    uuid "^9.0.1"
+
+"@particle-network/chains@*":
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.3.7.tgz#10ab1eb7f3ae735be1d4083df417e2415efbe5ce"
   integrity sha512-qdYAaR6jeGJSeT1xHZYC2ZnGISFmGZE4cct9966Ss+cDve/76wk4baVbsxhNvpoXq6hHMqE8pG98rgu/xCWM5g==
+
+"@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.3.8":
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.3.8.tgz#61f1847ac31eb7ae358a51e5f11ebda4d5bbb7cb"
+  integrity sha512-hDygYWHxkKYkKUZsbA8KIlauejiLYfPA944jCAJj5JjGcfx9sMVhahGFUj6MnJOxh/7uhJHzlQfK9PvuCxXUlw==
 
 "@particle-network/connectkit@^1.3.4":
   version "1.3.4"
@@ -4412,6 +4470,18 @@
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/@particle-network/wallet/-/wallet-1.3.2.tgz#112085eee870293aaa585b60aa577bc23b5df3f2"
   integrity sha512-bUgLHjSzRH3igeVvMbCmtMpdOY3EDE2lwdmipGGAWEmGlV6bjdf5NjsO7nV2WA+qCQgYlkAD7xGyZ9OIed+Swg==
+  dependencies:
+    "@solana/web3.js" "^1.73.0"
+    crypto-js "^4.1.1"
+    draggabilly "^3.0.0"
+    fast-json-stable-stringify "^2.1.0"
+    lodash "^4.17.21"
+    uuid "^9.0.1"
+
+"@particle-network/wallet@^1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@particle-network/wallet/-/wallet-1.3.3.tgz#1d9adb543c87d1a4c94c9668b71004047d3ebb10"
+  integrity sha512-VfzxGcXbrAe18GX5G+RNr6GdESTvyX5CIw0XFY1DO/29xIx160n2nAUd4Z0NBEQGuic/IjHxVFdx9PexUzVpzg==
   dependencies:
     "@solana/web3.js" "^1.73.0"
     crypto-js "^4.1.1"
