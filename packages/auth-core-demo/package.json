@@ -4,11 +4,11 @@
     "private": true,
     "scripts": {
         "clean": "rm -rf .next && rm -rf dist",
-        "start": "rm -rf .next && env-cmd -f .env.dev.local next dev -p 3299",
-        "dev": "yarn clean && yarn start",
-        "build": "yarn clean && env-cmd -f .env next build",
+        "start": "next start",
+        "dev": "next dev -p 3299",
+        "build": "yarn clean && next build",
         "build:staging": "yarn clean && env-cmd -f .env.staging.local next build",
-        "build:dev": "yarn clean && env-cmd -f .env.dev.local next build",
+        "build:dev": "yarn clean && env-cmd -f .env.development.local next build",
         "deploy:dev": "./dev_deploy.sh"
     },
     "dependencies": {
@@ -27,7 +27,7 @@
         "babel-plugin-import": "^1.13.8",
         "ethers": "^6.8.0",
         "lodash": "^4.17.21",
-        "next": "^14.0.3",
+        "next": "14.1.3",
         "qrcode.react": "^3.1.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",

@@ -14,6 +14,8 @@ yarn create @particle-network/auth-core-modal
 
 ## Examples
 
+Create a `.env` file like `.env.sample` in `./packages/auth-core-demo/` and replace `xxx` with your own Particle project configuration registered on the [Dashboard](https://dashboard.particle.network/).
+
 To run an example locally, install dependencies.
 
 ```bash

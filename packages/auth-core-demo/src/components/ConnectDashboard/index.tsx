@@ -1,12 +1,6 @@
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import { AuthType } from '@particle-network/auth-core';
-import {
-    isValidE164PhoneNumber,
-    isValidEmail,
-    useConnect,
-    useCustomize,
-    type ConnectOptions,
-} from '@particle-network/auth-core-modal';
+import { AuthType, type ConnectParam } from '@particle-network/auth-core';
+import { isValidE164PhoneNumber, isValidEmail, useConnect, useCustomize } from '@particle-network/auth-core-modal';
 import { ParticleChains, chains, type Chain } from '@particle-network/chains';
 import { Button, Input, Popover, Select, Switch, message } from 'antd';
 import { useRef, useState } from 'react';
@@ -100,7 +94,7 @@ export const ConnectDashboard = () => {
                 message: authorizeMessage,
             };
         }
-        let options: ConnectOptions = {
+        let options: ConnectParam = {
             authorization,
             chain: connectChain,
         };
