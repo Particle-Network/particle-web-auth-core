@@ -1,4 +1,4 @@
-# Particle with RainbowKit
+# Particle with Web3Modal
 
 ## Getting Started
 

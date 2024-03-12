@@ -47,6 +47,20 @@ const Header = (props: Props) => {
                 }
             },
         },
+        {
+            label: <span>Web3Modal</span>,
+            key: 'Web3Modal',
+            onClick: () => {
+                window.open('https://next-web3modal-starter.vercel.app/', '_blank');
+            },
+        },
+        {
+            label: <span>RainbowKit</span>,
+            key: 'RainbowKit',
+            onClick: () => {
+                window.open('https://next-rainbowkit-starter.vercel.app/', '_blank');
+            },
+        },
     ];
 
     return (
