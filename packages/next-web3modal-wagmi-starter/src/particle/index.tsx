@@ -70,7 +70,12 @@ web3Modal.wagmiConfig.subscribe((state: any) => {
 web3Modal.subscribeEvents((event: any) => {
     // @ts-ignore
     const particle = window?.particle;
-    if (particle && event.data.event === 'MODAL_CLOSE' && particle.ethereum.isConnected()) {
+    if (
+        particle &&
+        event.data.event === 'MODAL_CLOSE' &&
+        web3Modal.wagmiConfig.state.status === 'disconnected' &&
+        particle.ethereum.isConnected()
+    ) {
         connecteFlag = 0;
         particle.ethereum.disconnect().then(() => {
             web3Modal.wagmiConfig.setState({
