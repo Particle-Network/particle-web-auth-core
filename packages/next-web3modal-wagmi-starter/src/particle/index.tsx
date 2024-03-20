@@ -41,6 +41,7 @@ const web3Modal: any = createWeb3Modal({
 let connecteFlag = 1;
 
 web3Modal.wagmiConfig.subscribe((state: any) => {
+    if (typeof window === 'undefined') return;
     if (state.status === 'connected') {
         connecteFlag = 1;
     }
@@ -68,6 +69,7 @@ web3Modal.wagmiConfig.subscribe((state: any) => {
 });
 
 web3Modal.subscribeEvents((event: any) => {
+    if (typeof window === 'undefined') return;
     // @ts-ignore
     const particle = window?.particle;
     if (
