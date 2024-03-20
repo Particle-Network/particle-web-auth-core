@@ -4662,10 +4662,10 @@
     lzutf8 "^0.6.3"
     uuid "^9.0.1"
 
-"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.3.21":
-  version "1.3.21"
-  resolved "https://registry.npmjs.org/@particle-network/chains/-/chains-1.3.21.tgz#82d2b098e165fc198e6e6e3e4c8b2154235e3aa1"
-  integrity sha512-tuUVuOPf+el+kDlHLFMyDy4IkoGjk+P3QvVrxT7WnmEma1NgWTE7RaNsniwqn6SYkAwAxksL/D9aADUXZxqPmw==
+"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.3.23":
+  version "1.3.23"
+  resolved "https://registry.npmjs.org/@particle-network/chains/-/chains-1.3.23.tgz#deef8309e8cee2329713c340f5d1d9ed812b8e57"
+  integrity sha512-RPF3KjOcQpczHGbOTQqS8HpzMw5ZA99TmiP3UrDO7/bN8+jGjQ7BXYoKvcPsKm62B3+nRa6FOlpoGDmLFKJazg==
 
 "@particle-network/connectkit@^1.3.6":
   version "1.3.6"
@@ -4680,9 +4680,9 @@
     react-svg "^16.1.6"
 
 "@particle-network/connectors@^1.3.3":
-  version "1.3.3"
-  resolved "https://registry.npmjs.org/@particle-network/connectors/-/connectors-1.3.3.tgz#d6cb470a08df4541f0db407862c1bd185e8d0412"
-  integrity sha512-Bk6DqQKTRHh5l77WwnoX8N9LCVD1udQA76W7iQLxahhXLn/jnzYovqnOKK7W9oDcHmbvEVLfBWrC8rMD1tPEDg==
+  version "1.3.4"
+  resolved "https://registry.npmjs.org/@particle-network/connectors/-/connectors-1.3.4.tgz#8aba26c34fbe317e9240cfd9541ddd0952c930ab"
+  integrity sha512-0nSRhoB8Z2iXhP00d+P2iYjJDZB/dUDq+4gAZP0xaublDhLwtVfQlL+TPkhoPpnSUFH49g5LsmkVpy0PvMLvBA==
   dependencies:
     "@coinbase/wallet-sdk" "^3.7.1"
     "@particle-network/chains" "*"
