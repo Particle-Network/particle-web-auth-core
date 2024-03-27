@@ -1,11 +1,4 @@
-import {
-    Ethereum,
-    EthereumGoerli,
-    EthereumSepolia,
-    Solana,
-    SolanaDevnet,
-    SolanaTestnet,
-} from '@particle-network/chains';
+import { Ethereum, EthereumSepolia, Solana, SolanaDevnet, SolanaTestnet } from '@particle-network/chains';
 import { ModalProvider } from '@particle-network/connectkit';
 import '@particle-network/connectkit/dist/index.css';
 import { evmWallets, solanaWallets } from '@particle-network/connectors';
@@ -22,14 +15,14 @@ const ConnectKit = () => {
                 projectId: process.env.NEXT_PUBLIC_PROJECT_ID as string,
                 clientKey: process.env.NEXT_PUBLIC_CLIENT_KEY as string,
                 appId: process.env.NEXT_PUBLIC_APP_ID as string,
-                chains: [Ethereum, EthereumGoerli, EthereumSepolia, Solana, SolanaDevnet, SolanaTestnet],
+                chains: [Ethereum, EthereumSepolia, Solana, SolanaDevnet, SolanaTestnet],
                 connectors: [
                     ...evmWallets({ projectId: '21d2a01621c47fb5f34b06c6390ac0bb', showQrModal: true }),
                     ...solanaWallets(),
                 ],
                 wallet: {
                     customStyle: {
-                        supportChains: [Ethereum, EthereumGoerli, EthereumSepolia, Solana, SolanaDevnet, SolanaTestnet],
+                        supportChains: [Ethereum, EthereumSepolia, Solana, SolanaDevnet, SolanaTestnet],
                     },
                 },
             }}
