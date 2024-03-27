@@ -1,12 +1,11 @@
 import { SafetyCertificateTwoTone } from '@ant-design/icons';
 import { useConnect, useSolana } from '@particle-network/auth-core-modal';
+import { useRequest } from 'ahooks';
 import { Button, message } from 'antd';
 import SolanaAllTransaction from './AllTransaction';
 import SolanaSignMessage from './SignMessage';
 import SignSolanaTransaction from './SignTransaction';
 import SolanaTransaction from './Transaction';
-
-const { useRequest } = require('ahooks');
 
 const Solana = () => {
     const { address, enable } = useSolana();

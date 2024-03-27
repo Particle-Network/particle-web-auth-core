@@ -1,5 +1,6 @@
 import { SafetyCertificateTwoTone } from '@ant-design/icons';
 import { useConnect, useCustomize, useEthereum } from '@particle-network/auth-core-modal';
+import { useRequest } from 'ahooks';
 import { Button, message } from 'antd';
 import { useEffect, useState } from 'react';
 import Erc4337GasModal from '../erc4337GasModal';
@@ -13,8 +14,6 @@ import SendERC721Tokens from './SendERC721Tokens';
 import SendETH from './SendETH';
 import ERC4337SendETH from './SendETH/erc4337';
 import SignTypedDatav4 from './SignTypedDatav4';
-
-const { useRequest } = require('ahooks');
 
 const EVM = () => {
     const { erc4337 } = useCustomize();
