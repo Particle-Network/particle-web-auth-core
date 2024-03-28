@@ -8,6 +8,8 @@ const packageSrc = [
     path.join(__dirname, './packages/next-app-starter/package.json'),
     path.join(__dirname, './packages/vite-react-starter/package.json'),
     path.join(__dirname, './packages/next-rainbowkit-starter/package.json'),
+    path.join(__dirname, './packages/next-web3modal-wagmi-starter/package.json'),
+    path.join(__dirname, './packages/next-web3modal-starter/package.json'),
 ];
 
 (async () => {
