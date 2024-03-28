@@ -3,7 +3,18 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    transpilePackages: ['crypto-js'],
+    transpilePackages: [
+        'crypto-js',
+        'antd',
+        '@ant-design',
+        'rc-util',
+        'rc-pagination',
+        'rc-picker',
+        'rc-notification',
+        'rc-tooltip',
+        'rc-tree',
+        'rc-table',
+    ],
     swcMinify: false,
     output: 'export',
     distDir: 'dist',
