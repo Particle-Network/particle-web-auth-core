@@ -10,8 +10,8 @@
         "clean": "lerna run clean",
         "bootstrap": "lerna bootstrap",
         "dev:demo": "lerna run dev --scope auth-core-demo --stream",
-        "dev:nextWeb3modal":"lerna run dev --scope next-web3modal-starter --stream",
-        "dev:nextWeb3modalWagmi":"lerna run dev --scope next-web3modal-wagmi-starter --stream",
+        "dev:nextWeb3modal": "lerna run dev --scope next-web3modal-starter --stream",
+        "dev:nextWeb3modalWagmi": "lerna run dev --scope next-web3modal-wagmi-starter --stream",
         "deploy:dev:demo": "lerna run deploy:dev --scope auth-core-demo --stream",
         "deploy:staging:demo": "./packages/auth-core-demo/staging_deploy.sh",
         "deploy:production:demo": "./packages/auth-core-demo/production_deploy.sh",
@@ -59,11 +59,11 @@
         "stylelint-config-standard-scss": "^10.0.0",
         "stylelint-formatters-html": "^1.1.0",
         "stylelint-order": "^6.0.3",
+        "terser-webpack-plugin": "^5.3.9",
         "ts-jest": "^28.0.3",
         "ts-node": "^10.8.0",
         "typescript": "^5.2.2",
-        "webpack-bundle-analyzer": "^4.9.1",
-        "terser-webpack-plugin": "^5.3.9"
+        "webpack-bundle-analyzer": "^4.9.1"
     },
     "lint-staged": {
         "*.{css,less,scss,sass}": [
