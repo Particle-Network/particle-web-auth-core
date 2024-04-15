@@ -3,7 +3,7 @@ import events from '@/utils/eventBus';
 import { isMobile, shortString } from '@/utils/index';
 import type { CreateSessionKeyOptions, SessionKey, UserOpBundle, UserOpParams } from '@particle-network/aa';
 import { useConnect, useCustomize, useEthereum } from '@particle-network/auth-core-modal';
-import { ComboTestnet, PolygonMumbai } from '@particle-network/chains';
+import { ComboTestnet } from '@particle-network/chains';
 import { useRequest } from 'ahooks';
 import { Button, Space, Table, message, notification } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
@@ -229,10 +229,7 @@ const AASessionKey = () => {
         }
     );
 
-    const displayAction = useMemo(
-        () => chainInfo.id === PolygonMumbai.id || chainInfo.id === ComboTestnet.id,
-        [chainInfo]
-    );
+    const displayAction = useMemo(() => chainInfo.id === ComboTestnet.id, [chainInfo]);
 
     const startCreateSession = () => {
         runCreateSessions(chainInfo.id, localSessions ?? []);
@@ -252,7 +249,7 @@ const AASessionKey = () => {
     };
 
     const getTokenBalance = async () => {
-        if (chainInfo.id === PolygonMumbai.id || chainInfo.id === ComboTestnet.id) {
+        if (chainInfo.id === ComboTestnet.id) {
             try {
                 const address = await window.smartAccount.getAddress();
                 const abi = ['function balanceOf(address account, uint256 id) view returns (uint256)'];
@@ -385,8 +382,7 @@ const AASessionKey = () => {
                                 color: 'red',
                             }}
                         >
-                            This demo only support {PolygonMumbai.fullname} and {ComboTestnet.fullname}, please switch
-                            chain first.
+                            This demo only support {ComboTestnet.fullname}, please switch chain first.
                         </p>
                     )}
                 </div>
