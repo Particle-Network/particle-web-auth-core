@@ -96,7 +96,6 @@ export const aaOptions = {
         { apiKey: 'y2oPaKtU4.aa0dad3c-6e92-4992-ba4a-d4f5bf2c6060', chainId: 1 },
         { apiKey: 'RWBf97p9s.ada0ab42-eb24-45b7-8968-176c09735ad3', chainId: 5 },
         { apiKey: '6thfcuz3h.f6c26989-e8b9-4127-9153-3d92c983c54d', chainId: 137 },
-        { apiKey: 'hYZIwIsf2.e18c790b-cafb-4c4e-a438-0289fc25dba1', chainId: 80001 },
         { apiKey: 'sNEd_Dfjt.88e85c83-dc0e-45e0-931b-b835f1f5f11b', chainId: 56 },
         { apiKey: 'u7F_1lHe5.f9c588e6-96d6-4965-bc33-03f96fa05387', chainId: 97 },
         { apiKey: '2CBwiCy6J.9c03be35-3919-44b8-89b6-20d9b7d4c3e4', chainId: 42161 },
