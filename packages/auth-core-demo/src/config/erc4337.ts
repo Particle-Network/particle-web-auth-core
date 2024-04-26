@@ -21,7 +21,7 @@ export const options = {
             84531, 84532, 59144, 59140, 10, 420, 11155420, 169, 3441005, 5000, 5003, 534352, 534351, 100, 10200, 424,
             58008, 88, 89, 1284, 1285, 1287, 1101, 250, 4002, 9980, 91715, 42766, 43851, 167008, 196, 195, 3776,
             6038361, 12008, 12015, 7000, 7001, 1116, 1115, 34443, 919, 888888888, 28122024, 81457, 168587773, 80085,
-            112358, 1637450, 202402181627, 13473, 2241, 9990,
+            112358, 1637450, 202402181627, 13473, 2241, 9990, 7560, 111557560,
         ],
         BATCH_TX: true,
         VERSION: '1.0.0',
@@ -49,13 +49,19 @@ export const options = {
     },
     BTC_V2: {
         NAME: 'BTC Account',
-        SUPPORTED_CHAIN_IDS: [200901, 200810, 3636, 2442, 1123, 223, 5000, 5003, 2648, 111],
+        SUPPORTED_CHAIN_IDS: [200901, 200810, 3636, 2442, 1123, 223, 5000, 5003, 2648, 111, 60808],
         BATCH_TX: true,
         VERSION: '2.0.0',
     },
     UNIVERSAL: {
         NAME: 'Universal Account',
-        SUPPORTED_CHAIN_IDS: [11155111, 2011, 11155420],
+        SUPPORTED_CHAIN_IDS: [11155111, 2011, 11155420, 137],
+        BATCH_TX: true,
+        VERSION: '1.0.0',
+    },
+    XTERIO: {
+        NAME: 'Xterio Account',
+        SUPPORTED_CHAIN_IDS: [112358, 1637450, 11155111],
         BATCH_TX: true,
         VERSION: '1.0.0',
     },
@@ -89,6 +95,12 @@ export const aaOptions = {
             {
                 version: options.LIGHT.VERSION,
                 chainIds: options.LIGHT.SUPPORTED_CHAIN_IDS,
+            },
+        ],
+        XTERIO: [
+            {
+                version: options.XTERIO.VERSION,
+                chainIds: options.XTERIO.SUPPORTED_CHAIN_IDS,
             },
         ],
     },
