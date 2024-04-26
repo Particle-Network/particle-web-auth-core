@@ -47,7 +47,15 @@ function DemoSetting() {
     const FiatCoinOptions = ['USD', 'CNY', 'JPY', 'HKD', 'INR', 'KRW'];
 
     const ERC4337Types = useMemo(() => {
-        return ['DISABLE', 'BICONOMY 1.0.0', 'BICONOMY 2.0.0', 'CYBERCONNECT 1.0.0', 'LIGHT 1.0.2', 'SIMPLE 1.0.0'];
+        return [
+            'DISABLE',
+            'BICONOMY 1.0.0',
+            'BICONOMY 2.0.0',
+            'CYBERCONNECT 1.0.0',
+            'LIGHT 1.0.2',
+            'SIMPLE 1.0.0',
+            'XTERIO 1.0.0',
+        ];
     }, []);
 
     const router = useRouter();
