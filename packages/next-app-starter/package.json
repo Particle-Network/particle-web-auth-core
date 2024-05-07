@@ -9,7 +9,7 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@particle-network/auth-core-modal": "^1.4.4",
+        "@particle-network/auth-core-modal": "^1.4.5",
         "next": "14.0.3",
         "react": "18.2.0",
         "react-dom": "18.2.0"
