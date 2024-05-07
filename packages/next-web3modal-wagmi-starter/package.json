@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@particle-network/auth-core-modal": "^1.4.5-alpha.0",
+    "@particle-network/auth-core-modal": "^1.4.5",
     "@web3modal/wagmi": "^4.0.13",
     "wagmi": "^2.5.7",
     "@wagmi/core":"^2.6.5",

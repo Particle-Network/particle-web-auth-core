@@ -4964,14 +4964,14 @@
     hash.js "^1.1.7"
     uuidv4 "^6.2.13"
 
-"@particle-network/auth-core-modal@^1.4.5-alpha.0":
-  version "1.4.5-alpha.0"
-  resolved "https://registry.yarnpkg.com/@particle-network/auth-core-modal/-/auth-core-modal-1.4.5-alpha.0.tgz#922f3bf1e78b3b9208833fac0a7cf8c6e5441240"
-  integrity sha512-kkFOH9sJweKhfmbDfdKuemdUAjirTuAl03WiAeamKE+ZUE6c16AGeVtV2mbXr30Rd6ia6g1mkiC/agw8vIDPCg==
+"@particle-network/auth-core-modal@^1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@particle-network/auth-core-modal/-/auth-core-modal-1.4.5.tgz#909154b15722ddd090124a869e21527818a51dc0"
+  integrity sha512-aacYbgVrBpIm+SNKDlcs0BB9Z1yVbb37Nkc9oOboz+K1YpESju9s6e2vzV5oXTX6dhgR5I4eBZ0nL9pcutevUQ==
   dependencies:
     "@particle-network/analytics" "^1.0.1"
-    "@particle-network/auth-core" "^1.4.3-alpha.0"
-    "@particle-network/wallet" "^1.4.5-alpha.0"
+    "@particle-network/auth-core" "^1.4.3"
+    "@particle-network/wallet" "^1.4.5"
     "@solana/spl-token" "^0.2.0"
     ahooks "^3.7.8"
     antd "^4"
@@ -4992,10 +4992,10 @@
     react-shadow "^20.4.0"
     uuid "^8.3.2"
 
-"@particle-network/auth-core@^1.4.3-alpha.0":
-  version "1.4.3-alpha.0"
-  resolved "https://registry.yarnpkg.com/@particle-network/auth-core/-/auth-core-1.4.3-alpha.0.tgz#231b62470b00bd9500c40b9dab6f15be7bba0276"
-  integrity sha512-pg8FtyVWxVxKxlQuSckSkt3iBtI14UNIUjMx1H3bPvpOT0whrAQG1jq1iGIGRPGzfMt8rA+zFdXTZvCAZlwMYg==
+"@particle-network/auth-core@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@particle-network/auth-core/-/auth-core-1.4.3.tgz#79cb3ed03274b7cb86b5e6b9ce9419bfc74c843d"
+  integrity sha512-DpEhTLa3+ZoR9Ttrns4yW7rEXQKANEAWcAEUwI5M+CTmAyHced44bwjg5J9N6LnbMKCr3gAXcLzaKMAsomHCOA==
   dependencies:
     "@aws-sdk/client-cognito-identity" "^3.58.0"
     "@aws-sdk/client-kms" "^3.58.0"
@@ -5018,17 +5018,22 @@
     lzutf8 "^0.6.3"
     uuid "^9.0.1"
 
-"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.4.7":
+"@particle-network/chains@*", "@particle-network/chains@>=1.3.8":
   version "1.4.7"
   resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.4.7.tgz#b4bcefdc98dab81edf399e314c4e1b72586d3d97"
   integrity sha512-ON47iYK4lR9yarFjTB/nJu/0mP2oolKgxVgan/W5VboYG7c5mBpa0b3lt6xl1lv3vI6KqBFXVhFoZt0YKD3qqQ==
 
-"@particle-network/connectkit@^1.4.1-alpha.0":
-  version "1.4.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@particle-network/connectkit/-/connectkit-1.4.1-alpha.0.tgz#a043b6a4b37253304d66a65ac66ab54e15647835"
-  integrity sha512-2wHAP2kerEwNSp+oDtciGQTIrBtf9GRjiTmPSoIw0PLiU/TZdAkwumt+of6735MbMcVnfxrC/3yCC3SKO3tw3g==
+"@particle-network/chains@^1.4.8":
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.4.8.tgz#3fcba1f152672571e25a6758f2c2e7fbfb72569f"
+  integrity sha512-0rv1oIyS+R4/O6MNkgFJgb4jmUyJVzO0Xdy48LJYN9AOFmZCewll/QHCg/oJFoI6uFMF90D5sOCFrJ0YIMyKeg==
+
+"@particle-network/connectkit@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@particle-network/connectkit/-/connectkit-1.4.1.tgz#dbab2bc256e30f6efa056e846dfdccde66e656db"
+  integrity sha512-QOSiYc5EXMg/176p94hpaej3dV04D9Ay8gr49L6WyRoeBTUDKGgLGWJgHTRaskCRgHhTBp2NN8AlCa+ohEfe4w==
   dependencies:
-    "@particle-network/auth-core-modal" "^1.4.5-alpha.0"
+    "@particle-network/auth-core-modal" "^1.4.5"
     "@particle-network/connectors" "^1.3.5"
     i18next "^22.0.6"
     qrcode "^1.5.1"
@@ -5056,10 +5061,10 @@
     buffer "^6.0.3"
     elliptic "^6.5.4"
 
-"@particle-network/wallet@^1.4.5-alpha.0":
-  version "1.4.5-alpha.0"
-  resolved "https://registry.yarnpkg.com/@particle-network/wallet/-/wallet-1.4.5-alpha.0.tgz#6f503414e13125c871cf75444e518d9b28646aee"
-  integrity sha512-hk4s0rSs+QqAvjInaYmkSKIgF88NN2C/nuSowA0P8Rl1RIZLhMa5EBxzJnSZ8LNF/BwORSWXNsOPJ1C/etEX1w==
+"@particle-network/wallet@^1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@particle-network/wallet/-/wallet-1.4.5.tgz#d2b5ad5ee798d6d16eb13c69fe4ff92f95e0224b"
+  integrity sha512-huB0qs2XHb3Pxjl6eUuzPJRYAlPve8LAGgmExPGGYCPEN4oWU/eOI2PtH+2ls2pKkJs4/VcoYt/ZUbKoSgeYhA==
   dependencies:
     "@solana/web3.js" "^1.73.0"
     crypto-js "^4.1.1"
