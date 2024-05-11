@@ -5018,15 +5018,10 @@
     lzutf8 "^0.6.3"
     uuid "^9.0.1"
 
-"@particle-network/chains@*", "@particle-network/chains@>=1.3.8":
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.4.7.tgz#b4bcefdc98dab81edf399e314c4e1b72586d3d97"
-  integrity sha512-ON47iYK4lR9yarFjTB/nJu/0mP2oolKgxVgan/W5VboYG7c5mBpa0b3lt6xl1lv3vI6KqBFXVhFoZt0YKD3qqQ==
-
-"@particle-network/chains@^1.4.8":
-  version "1.4.8"
-  resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.4.8.tgz#3fcba1f152672571e25a6758f2c2e7fbfb72569f"
-  integrity sha512-0rv1oIyS+R4/O6MNkgFJgb4jmUyJVzO0Xdy48LJYN9AOFmZCewll/QHCg/oJFoI6uFMF90D5sOCFrJ0YIMyKeg==
+"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.4.9":
+  version "1.4.9"
+  resolved "https://registry.npmjs.org/@particle-network/chains/-/chains-1.4.9.tgz#2fe0575f1764b7488a9e9751c9aa6dcc45b09eec"
+  integrity sha512-IcCJIYvOcpcF2uhW0UlWc6/4gR2W+OCuIsCxmnP++Qo01ddWi67qPoTP6nQ1/tbFOClfaQOq7Ix0TyWG3+bSdg==
 
 "@particle-network/connectkit@^1.4.1":
   version "1.4.1"
