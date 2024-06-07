@@ -4949,10 +4949,10 @@
     "@parcel/watcher-win32-ia32" "2.3.0"
     "@parcel/watcher-win32-x64" "2.3.0"
 
-"@particle-network/aa@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@particle-network/aa/-/aa-1.5.0.tgz#aafd6e30cd116f4dfbd3e91624faeba5eff8703e"
-  integrity sha512-Du7G8FmIGKQMttJNHcMk13eywqEW7ptCXcDJcidHJmhpmwPLmlx3oMZ78/q73U/L29Mz7S2e0TSy55eMHtfkVQ==
+"@particle-network/aa@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@particle-network/aa/-/aa-1.5.1.tgz#03509988eb4d5de4d176455b2f17aa68f5d738d4"
+  integrity sha512-zee1rFdJzELZ3JzrEay+Q5zpsQX6yzspTlPPN49ZT1CPHD3ftjfLUVWq/4rTlI7FRAc9gTu7Qisx+FPMqmgNMw==
   dependencies:
     axios "^1.3.6"
 
@@ -5018,15 +5018,10 @@
     lzutf8 "^0.6.3"
     uuid "^9.0.1"
 
-"@particle-network/chains@*", "@particle-network/chains@>=1.3.8":
-  version "1.4.11"
-  resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.4.11.tgz#b81770bbd60cf160583c02d54ccd5094faa2d248"
-  integrity sha512-WcOHL23GjbkkZCgpgJWJDQhxh0xjArzikwu0kwKDEoeUTzhrjYsGtGjqdSJLVsgf/CRekiHBg+v26zWDsfmm5g==
-
-"@particle-network/chains@^1.4.13":
-  version "1.4.13"
-  resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.4.13.tgz#1929fcc2113a4a45c4ebf951224db63ff1a87727"
-  integrity sha512-GMmmpDVpxbyI5n9tayt421eqn1aEZWaKKSmvJ6/fIhZpmYvcubmFLzHmygM1ef+uBxwbGSh888gnXSCjfn+OUg==
+"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.4.14":
+  version "1.4.14"
+  resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.4.14.tgz#82de1e68c38c85736dd19ad0e571dc818cd93696"
+  integrity sha512-Q3ZoveJUeuG8XprMSQkuYJUPObUkqZxmG3tOPY7IehY2PM8DMgq/CnvhGF4C36X3VtV9yFXfdu/W8GuXqW7jVA==
 
 "@particle-network/connectkit@^1.4.5":
   version "1.4.5"
