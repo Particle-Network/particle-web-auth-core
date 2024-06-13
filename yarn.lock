@@ -5018,10 +5018,10 @@
     lzutf8 "^0.6.3"
     uuid "^9.0.1"
 
-"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.4.11":
-  version "1.4.11"
-  resolved "https://registry.yarnpkg.com/@particle-network/chains/-/chains-1.4.11.tgz#b81770bbd60cf160583c02d54ccd5094faa2d248"
-  integrity sha512-WcOHL23GjbkkZCgpgJWJDQhxh0xjArzikwu0kwKDEoeUTzhrjYsGtGjqdSJLVsgf/CRekiHBg+v26zWDsfmm5g==
+"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.4.14":
+  version "1.14.15"
+  resolved "https://registry.npmjs.org/@particle-network/chains/-/chains-1.14.15.tgz#455517edd606e7758a913a3d1029d8853a498ce0"
+  integrity sha512-QUkPD+CC1jXjq5GmXsclkWBqOTXMv05PThP0PtFJQIKn6r/lMw7riZwhlPo/pzbGlN5kELcGX3bSL38FbTOzrQ==
 
 "@particle-network/connectkit@^1.4.4":
   version "1.4.4"
