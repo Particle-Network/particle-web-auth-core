@@ -5018,7 +5018,7 @@
     lzutf8 "^0.6.3"
     uuid "^9.0.1"
 
-"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.4.14":
+"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.4.15":
   version "1.14.15"
   resolved "https://registry.npmjs.org/@particle-network/chains/-/chains-1.14.15.tgz#455517edd606e7758a913a3d1029d8853a498ce0"
   integrity sha512-QUkPD+CC1jXjq5GmXsclkWBqOTXMv05PThP0PtFJQIKn6r/lMw7riZwhlPo/pzbGlN5kELcGX3bSL38FbTOzrQ==
