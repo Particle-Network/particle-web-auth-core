@@ -4964,7 +4964,7 @@
     hash.js "^1.1.7"
     uuidv4 "^6.2.13"
 
-"@particle-network/auth-core-modal@^1.4.6", "@particle-network/auth-core-modal@^1.4.9":
+"@particle-network/auth-core-modal@^1.4.9":
   version "1.4.9"
   resolved "https://registry.yarnpkg.com/@particle-network/auth-core-modal/-/auth-core-modal-1.4.9.tgz#c9c5d9a9831f8060f37674dc98a905689cf8fd77"
   integrity sha512-LlaPJUYFU1n8jG5W4DkTnsip25S82jQHWQ0xzg94qj6NbEBjI0MWBFqCUTkTduRQ1E/YkLHaFUe+STXXJegMiQ==
@@ -5023,12 +5023,12 @@
   resolved "https://registry.npmjs.org/@particle-network/chains/-/chains-1.14.15.tgz#455517edd606e7758a913a3d1029d8853a498ce0"
   integrity sha512-QUkPD+CC1jXjq5GmXsclkWBqOTXMv05PThP0PtFJQIKn6r/lMw7riZwhlPo/pzbGlN5kELcGX3bSL38FbTOzrQ==
 
-"@particle-network/connectkit@^1.4.5":
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/@particle-network/connectkit/-/connectkit-1.4.5.tgz#fbb159c9a9384d6d2e73dac0c7226ba1865f0564"
-  integrity sha512-6O9Ilxwtw0mR7m3j/HCeo6cX8OMHY/s1Vb/l3yuLOkrLiJNXE3J6+Bh1RXkikzzNy4SfLYHHb+MHxMY7gZTlfA==
+"@particle-network/connectkit@^1.4.6":
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@particle-network/connectkit/-/connectkit-1.4.6.tgz#94c8ceeb9ffb1b02548901364af086fa18e7f6f1"
+  integrity sha512-9p3yUVRFKVA7gO6VEK9KYS9yPBvRne+qrUqp1ruZq1RLDHCnfQDrDFVJ323WfcmwLACR/Sgev7xIdCzFuW82qA==
   dependencies:
-    "@particle-network/auth-core-modal" "^1.4.6"
+    "@particle-network/auth-core-modal" "^1.4.9"
     "@particle-network/connectors" "^1.4.3"
     i18next "^22.0.6"
     qrcode "^1.5.1"
