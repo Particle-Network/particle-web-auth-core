@@ -4964,10 +4964,10 @@
     hash.js "^1.1.7"
     uuidv4 "^6.2.13"
 
-"@particle-network/auth-core-modal@^1.4.6", "@particle-network/auth-core-modal@^1.4.7":
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/@particle-network/auth-core-modal/-/auth-core-modal-1.4.7.tgz#dac1602acd0d55219a1bbfdb3d610c9d0e0ea244"
-  integrity sha512-yrZQQNlAlEE2TNbG4gpKZZStIaD9BX+qzvcjwztBja0ey2b4cgF1m93GBhJmP9Z5fMd/rdY210Cw+76TGX1z7A==
+"@particle-network/auth-core-modal@^1.4.6", "@particle-network/auth-core-modal@^1.4.9":
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/@particle-network/auth-core-modal/-/auth-core-modal-1.4.9.tgz#c9c5d9a9831f8060f37674dc98a905689cf8fd77"
+  integrity sha512-LlaPJUYFU1n8jG5W4DkTnsip25S82jQHWQ0xzg94qj6NbEBjI0MWBFqCUTkTduRQ1E/YkLHaFUe+STXXJegMiQ==
   dependencies:
     "@particle-network/analytics" "^1.0.1"
     "@particle-network/auth-core" "^1.4.4"
