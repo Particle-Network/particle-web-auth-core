@@ -1,5 +1,5 @@
 import { isMobile } from '@/utils/index';
-import { AuthCoreContextProvider } from '@particle-network/auth-core-modal';
+import { AuthCoreContextProvider, type AuthCoreModalOptions } from '@particle-network/auth-core-modal';
 import { merge } from 'lodash';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -22,7 +22,7 @@ if (!isServer() && process.env.NEXT_PUBLIC_PARTICLE_ENV === 'development' && isM
 export default function App({ Component, pageProps }: any) {
     const router = useRouter();
 
-    const authCoreOptions = useMemo(() => {
+    const authCoreOptions: AuthCoreModalOptions = useMemo(() => {
         const cacheOption = isServer() ? {} : JSON.parse(localStorage.getItem('customModalOptions') || '{}');
         return merge(
             {
@@ -42,7 +42,7 @@ export default function App({ Component, pageProps }: any) {
                     visible: true,
                     preload: true,
                 },
-            },
+            } as AuthCoreModalOptions,
             cacheOption
         );
     }, []);
