@@ -1,6 +1,6 @@
 {
     "name": "auth-core-demo",
-    "version": "1.4.17",
+    "version": "1.4.18",
     "private": true,
     "scripts": {
         "clean": "rm -rf .next && rm -rf dist",
