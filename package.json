@@ -10,6 +10,7 @@
         "clean": "lerna run clean",
         "bootstrap": "lerna bootstrap",
         "dev:demo": "lerna run dev --scope auth-core-demo --stream",
+        "dev:vitedemo": "lerna run dev --scope auth-core-vite-demo --stream",
         "dev:nextWeb3modal": "lerna run dev --scope next-web3modal-starter --stream",
         "dev:nextWeb3modalWagmi": "lerna run dev --scope next-web3modal-wagmi-starter --stream",
         "deploy:dev:demo": "lerna run deploy:dev --scope auth-core-demo --stream",
