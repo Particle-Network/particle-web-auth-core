@@ -16,7 +16,7 @@ export const options = {
         BATCH_TX: true,
         VERSION: '2.0.0',
     },
-    SIMPLE: {
+    SIMPLE_V1: {
         NAME: 'Simple Account',
         SUPPORTED_CHAIN_IDS: [
             1, 11155111, 17000, 137, 80002, 56, 97, 204, 5611, 42161, 42170, 421614, 43114, 43113, 8453, 84532, 59144,
@@ -27,6 +27,18 @@ export const options = {
         ],
         BATCH_TX: true,
         VERSION: '1.0.0',
+    },
+    SIMPLE_V2: {
+        NAME: 'Simple Account',
+        SUPPORTED_CHAIN_IDS: [
+            1, 11155111, 17000, 137, 80002, 56, 97, 204, 5611, 42161, 42170, 421614, 43114, 43113, 8453, 84532, 59144,
+            59141, 10, 11155420, 169, 3441005, 5000, 5003, 534352, 534351, 100, 10200, 424, 58008, 88, 89, 1284, 1285,
+            1287, 1101, 250, 4002, 9980, 1715, 42766, 43851, 167000, 167009, 196, 195, 3776, 6038361, 12008, 12015,
+            7000, 7001, 1116, 1115, 34443, 919, 888888888, 28122024, 81457, 168587773, 80084, 80085, 112358, 1637450,
+            2777, 202402181627, 13473, 2241, 9990, 7560, 111557560, 1224, 200901, 200810, 122, 123, 4689, 4690,
+        ],
+        BATCH_TX: true,
+        VERSION: '2.0.0',
     },
     CYBERCONNECT: {
         NAME: 'Cyber Account',
@@ -49,6 +61,7 @@ export const options = {
         BATCH_TX: true,
         VERSION: '1.0.0',
     },
+    // 测试用，实际没有这个版本
     BTC_V1_1: {
         NAME: 'BTC Account',
         SUPPORTED_CHAIN_IDS: [137],
@@ -57,7 +70,10 @@ export const options = {
     },
     BTC_V2: {
         NAME: 'BTC Account',
-        SUPPORTED_CHAIN_IDS: [200901, 200810, 3636, 2442, 1123, 223, 5000, 5003, 2648, 111, 60808, 137, 89682],
+        SUPPORTED_CHAIN_IDS: [
+            4200, 686868, 200901, 200810, 3636, 2442, 1123, 223, 5000, 5003, 2648, 111, 60808, 137, 89682, 3110, 11501,
+            11503,
+        ],
         BATCH_TX: true,
         VERSION: '2.0.0',
     },
@@ -95,8 +111,12 @@ export const aaOptions = {
         ],
         SIMPLE: [
             {
-                version: options.SIMPLE.VERSION,
-                chainIds: options.SIMPLE.SUPPORTED_CHAIN_IDS,
+                version: options.SIMPLE_V1.VERSION,
+                chainIds: options.SIMPLE_V1.SUPPORTED_CHAIN_IDS,
+            },
+            {
+                version: options.SIMPLE_V2.VERSION,
+                chainIds: options.SIMPLE_V2.SUPPORTED_CHAIN_IDS,
             },
         ],
         LIGHT: [

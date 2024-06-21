@@ -1,0 +1,24 @@
+{
+    "name": "auth-core-vite-demo",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@particle-network/auth-core-modal": "^1.5.0",
+        "ant-design-vue": "^4.2.3",
+        "pinia": "^2.1.7",
+        "vue": "^3.4.21"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.0.4",
+        "typescript": "^5.2.2",
+        "vite": "^5.2.0",
+        "buffer": "^6.0.3",
+        "vue-tsc": "^2.0.6"
+    }
+}
