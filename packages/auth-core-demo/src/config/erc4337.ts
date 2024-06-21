@@ -38,7 +38,7 @@ export const options = {
             2777, 202402181627, 13473, 2241, 9990, 7560, 111557560, 1224, 200901, 200810, 122, 123, 4689, 4690,
         ],
         BATCH_TX: true,
-        VERSION: '1.0.0',
+        VERSION: '2.0.0',
     },
     CYBERCONNECT: {
         NAME: 'Cyber Account',
