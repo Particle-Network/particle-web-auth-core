@@ -5104,13 +5104,13 @@
     hash.js "^1.1.7"
     uuidv4 "^6.2.13"
 
-"@particle-network/auth-core-modal@^1.4.9":
-  version "1.4.9"
-  resolved "https://registry.yarnpkg.com/@particle-network/auth-core-modal/-/auth-core-modal-1.4.9.tgz#c9c5d9a9831f8060f37674dc98a905689cf8fd77"
-  integrity sha512-LlaPJUYFU1n8jG5W4DkTnsip25S82jQHWQ0xzg94qj6NbEBjI0MWBFqCUTkTduRQ1E/YkLHaFUe+STXXJegMiQ==
+"@particle-network/auth-core-modal@^1.4.9", "@particle-network/auth-core-modal@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@particle-network/auth-core-modal/-/auth-core-modal-1.5.0.tgz#1361d5934c77e6c19bda0a80344933ac1d615d49"
+  integrity sha512-HWWYNerQz/tbQMBqqmSZjSkJEnheK340ENdup+6J2qeUhWBwYbUq3lm9lELgf9j5sYNJgGhu6cZekf2eJlCpcw==
   dependencies:
     "@particle-network/analytics" "^1.0.1"
-    "@particle-network/auth-core" "^1.4.4"
+    "@particle-network/auth-core" "^1.5.0"
     "@particle-network/wallet" "^1.4.6"
     "@solana/spl-token" "^0.2.0"
     ahooks "^3.7.8"
@@ -5132,10 +5132,10 @@
     react-shadow "^20.4.0"
     uuid "^8.3.2"
 
-"@particle-network/auth-core@^1.4.4":
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/@particle-network/auth-core/-/auth-core-1.4.4.tgz#05de2a64c2f2cb8f25d1acd8d111e9b639972bc1"
-  integrity sha512-7ASTrF9MkPjYaRoFNmvS720FgOZfsd69Vg6IgyKUMN43Hr4nwIv+YvkZ1ZX9TTyZ5IFL5QjAuWbC0/sQQOrNdw==
+"@particle-network/auth-core@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@particle-network/auth-core/-/auth-core-1.5.0.tgz#bea7dda58a12084fac6f489dbd08a23b9f9e164e"
+  integrity sha512-wuvFE+Cup8XIJDp2KRevJK1pWusPjMc3BpRsudGTionzTh87KEsZNbNrc1X0SVY5NHGUuJJB39mzaYuHz7sJ8w==
   dependencies:
     "@aws-sdk/client-cognito-identity" "^3.58.0"
     "@aws-sdk/client-kms" "^3.58.0"

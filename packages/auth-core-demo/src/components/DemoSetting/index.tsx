@@ -54,6 +54,7 @@ function DemoSetting() {
             'CYBERCONNECT 1.0.0',
             'LIGHT 1.0.2',
             'SIMPLE 1.0.0',
+            'SIMPLE 2.0.0',
             'XTERIO 1.0.0',
         ];
     }, []);

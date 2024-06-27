@@ -16,7 +16,7 @@ export const options = {
         BATCH_TX: true,
         VERSION: '2.0.0',
     },
-    SIMPLE: {
+    SIMPLE_V1: {
         NAME: 'Simple Account',
         SUPPORTED_CHAIN_IDS: [
             1, 11155111, 17000, 137, 80002, 56, 97, 204, 5611, 42161, 42170, 421614, 43114, 43113, 8453, 84532, 59144,
@@ -117,8 +117,12 @@ export const aaOptions = {
         ],
         SIMPLE: [
             {
-                version: options.SIMPLE.VERSION,
-                chainIds: options.SIMPLE.SUPPORTED_CHAIN_IDS,
+                version: options.SIMPLE_V1.VERSION,
+                chainIds: options.SIMPLE_V1.SUPPORTED_CHAIN_IDS,
+            },
+            {
+                version: options.SIMPLE_V2.VERSION,
+                chainIds: options.SIMPLE_V2.SUPPORTED_CHAIN_IDS,
             },
         ],
         LIGHT: [
