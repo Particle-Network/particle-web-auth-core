@@ -1,6 +1,6 @@
 {
     "name": "auth-core-demo",
-    "version": "1.5.0",
+    "version": "1.5.1",
     "private": true,
     "scripts": {
         "clean": "rm -rf .next && rm -rf dist",
@@ -18,7 +18,7 @@
         "@particle-network/aa": "^1.5.1",
         "@particle-network/auth-core-modal": "^1.5.0",
         "@particle-network/connectkit": "^1.4.7",
-        "@particle-network/chains": "^1.5.1",
+        "@particle-network/chains": "^1.5.3",
         "@svgr/webpack": "^8.1.0",
         "@zeit/next-css": "^1.0.1",
         "@zeit/next-less": "^1.0.1",
