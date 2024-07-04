@@ -5158,10 +5158,10 @@
     lzutf8 "^0.6.3"
     uuid "^9.0.1"
 
-"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.npmjs.org/@particle-network/chains/-/chains-1.5.3.tgz#d32cadc49deb7038cd2ca75c2b6183ffefbc6389"
-  integrity sha512-CU9VV5dxzZmcdVhDrrti7Bp7oEr4pbDJHjHvOfCz71Fllr6BTJdhnmq73kfUOdiLAAdBQpQPzWytwaalRoKGUw==
+"@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.5.4":
+  version "1.5.4"
+  resolved "https://registry.npmjs.org/@particle-network/chains/-/chains-1.5.4.tgz#e568e9671f4f0e6223a1d017eb8ba48255902157"
+  integrity sha512-H8UcYBmDPm/tHq5Yt83NvT8CwabdVZRaUo9zvYSBbaxnfEbnIFN8TuswdYDEmxPvLw96RPRu4H8XGRK8dUSmuQ==
 
 "@particle-network/connectkit@^1.4.7":
   version "1.4.7"
