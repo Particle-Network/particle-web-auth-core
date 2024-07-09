@@ -5071,7 +5071,7 @@
     "@walletconnect/modal" "~2.6.2"
     eventemitter3 "^4.0.0"
 
-"@particle-network/thresh-sig@*", "@particle-network/thresh-sig@^0.7.8":
+"@particle-network/thresh-sig@^0.7.8":
   version "0.7.8"
   resolved "https://registry.yarnpkg.com/@particle-network/thresh-sig/-/thresh-sig-0.7.8.tgz#1036446eb1082e39721c38d9267bb3e00b82c961"
   integrity sha512-Xe9yxt9s1ZnUpdwNPEHK9jMDg3Mjl9WePbmUMC4w7rZ+nxTE7gk0F+Q5mrEgwjmFAtDod0bCpzHygOOObF5QgQ==
@@ -5081,12 +5081,10 @@
     buffer "^6.0.3"
     elliptic "^6.5.4"
 
-"@particle-network/vite-plugin-wasm@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@particle-network/vite-plugin-wasm/-/vite-plugin-wasm-1.0.0.tgz#05a1867846d68408d3529c6defd0a483805aaace"
-  integrity sha512-1c9o1aM7wmOrKrbmFRKyILPfEmudkyfQYm6jmQP17bvp0SO3aRdV3lJbsNgXRzurGRMZh4ETEIDrOqGdBlUL+w==
-  dependencies:
-    "@particle-network/thresh-sig" "*"
+"@particle-network/vite-plugin-wasm@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@particle-network/vite-plugin-wasm/-/vite-plugin-wasm-1.0.3.tgz#9baaccc4854b2543a6bab99fa9d1553a34e3d231"
+  integrity sha512-eIf9/moSxgp4PViUUb2Y0uKT8cYNTsdNtxP4HMl4ancF7xPpqRNJqLxF55ojUG8CaUCd2Qvrz1U0ahd2oozpng==
 
 "@particle-network/wallet@^1.4.6":
   version "1.4.6"

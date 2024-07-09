@@ -19,7 +19,7 @@
         "typescript": "^5.2.2",
         "vite": "^5.2.0",
         "buffer": "^6.0.3",
-        "@particle-network/vite-plugin-wasm": "^1.0.0",
+        "@particle-network/vite-plugin-wasm": "^1.0.3",
         "vue-tsc": "^2.0.6"
     }
 }
