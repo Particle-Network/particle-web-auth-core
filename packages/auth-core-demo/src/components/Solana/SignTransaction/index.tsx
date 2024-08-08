@@ -1,5 +1,5 @@
 import { ArrowIcon } from '@/components/icons';
-import { useConnect, useSolana } from '@particle-network/auth-core-modal';
+import { useConnect, useSolana } from '@particle-network/authkit';
 import { PublicKey, SystemProgram, Transaction } from '@solana/web3.js';
 import { Button, Input, InputNumber, notification } from 'antd';
 import bs58 from 'bs58';

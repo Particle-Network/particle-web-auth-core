@@ -1,9 +1,10 @@
 import { isMobile } from '@/utils/index';
-import { AuthCoreContextProvider, type AuthCoreModalOptions } from '@particle-network/auth-core-modal';
+import { AuthCoreContextProvider, type AuthCoreModalOptions } from '@particle-network/authkit';
 import { merge } from 'lodash';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
+import { chains } from 'src/config/chains';
 import '../styles/erc4337GasModal.scss';
 import '../styles/globals.scss';
 
@@ -42,6 +43,7 @@ export default function App({ Component, pageProps }: any) {
                     visible: true,
                     preload: true,
                 },
+                chains: chains as any,
             } as AuthCoreModalOptions,
             cacheOption
         );

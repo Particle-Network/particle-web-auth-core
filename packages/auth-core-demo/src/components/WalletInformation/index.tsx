@@ -1,4 +1,4 @@
-import { shortString } from '@/utils/index';
+import { getEvmChains, getSolanaChains, shortString } from '@/utils/index';
 import { isHexString } from '@/utils/number-utils';
 import { CopyOutlined, PlusSquareOutlined, RedoOutlined } from '@ant-design/icons';
 import { tronAddressToHex } from '@particle-network/auth-core';
@@ -9,8 +9,7 @@ import {
     useCustomize,
     useEthereum,
     useSolana,
-} from '@particle-network/auth-core-modal';
-import { ParticleChains, chains } from '@particle-network/chains';
+} from '@particle-network/authkit';
 import { Badge, Button, Select, message } from 'antd';
 import { ethers } from 'ethers';
 import { useEffect, useMemo, useState } from 'react';
@@ -131,13 +130,13 @@ export const WalletInformation = () => {
         }
     }, [address, erc4337, chainInfo, aaNetworkConfig]);
 
-    const chainOptions = useMemo(() => {
-        const options = chains.getAllChainInfos().filter((item) => item.name !== 'Solana');
-        if (erc4337) {
-            return options.filter((item) => item.chainType === 'evm' && aaNetworkConfig.includes(item.id));
-        }
-        return options;
-    }, [erc4337, aaNetworkConfig]);
+    // const chainOptions = useMemo(() => {
+    //     const options = getAllChainInfos().filter((item) => item.name !== 'Solana');
+    //     if (erc4337) {
+    //         return options.filter((item) => item.chainType === 'evm' && aaNetworkConfig.includes(item.id));
+    //     }
+    //     return options;
+    // }, [erc4337, aaNetworkConfig]);
 
     const { run: runSwitchChain, loading: switchChainLoading } = useRequest(switchChain, {
         manual: true,
@@ -153,6 +152,14 @@ export const WalletInformation = () => {
         },
     });
 
+    const evmChians = useMemo(() => {
+        return getEvmChains();
+    }, []);
+
+    const solanaChains = useMemo(() => {
+        return getSolanaChains();
+    }, []);
+
     return (
         <div className="login-box card">
             <h2 className="login-box-title">Wallet Information</h2>
@@ -163,9 +170,9 @@ export const WalletInformation = () => {
                             EVM Chain:
                         </span>
                         <Select
-                            value={`${chainInfo.name.toLowerCase()}-${chainInfo.id}`}
+                            value={`${chainInfo.name}-${chainInfo.id}`}
                             onChange={(value) => {
-                                runSwitchChain(ParticleChains[value].id);
+                                runSwitchChain(value);
                             }}
                             style={{
                                 width: 190,
@@ -176,10 +183,10 @@ export const WalletInformation = () => {
                             filterOption={(input, option) => {
                                 return (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
                             }}
-                            options={chainOptions.map((item) => ({
+                            options={evmChians.map((item) => ({
                                 ...item,
-                                label: item.fullname,
-                                value: `${item.name.toLowerCase()}-${item.id}`,
+                                label: item.name,
+                                value: item.id,
                             }))}
                             getPopupContainer={(triggerNode) => triggerNode.parentNode}
                         />
@@ -205,9 +212,9 @@ export const WalletInformation = () => {
                                 onClick={() => getBalance()}
                                 style={{ marginLeft: 5, color: '#1890ff', cursor: 'pointer' }}
                             />
-                            {chainInfo.faucetUrl && (
+                            {!!chainInfo?.custom?.faucetUrl && (
                                 <PlusSquareOutlined
-                                    onClick={() => openWindow(chainInfo.faucetUrl)}
+                                    onClick={() => openWindow((chainInfo?.custom?.faucetUrl || '') as string)}
                                     style={{ marginLeft: 10, color: '#1890ff', cursor: 'pointer' }}
                                 />
                             )}
@@ -225,9 +232,9 @@ export const WalletInformation = () => {
                             Solana Chain:
                         </span>
                         <Select
-                            value={`${solanaChainInfo.name.toLowerCase()}-${solanaChainInfo.id}`}
+                            value={`${solanaChainInfo.name}-${solanaChainInfo.id}`}
                             onChange={(value) => {
-                                runSolanaSwitchChain(ParticleChains[value].id);
+                                runSolanaSwitchChain(value);
                             }}
                             style={{
                                 width: 190,
@@ -238,14 +245,11 @@ export const WalletInformation = () => {
                             filterOption={(input, option) => {
                                 return (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
                             }}
-                            options={chains
-                                .getAllChainInfos()
-                                .filter((item) => item.name === 'Solana')
-                                .map((item) => ({
-                                    ...item,
-                                    label: item.fullname,
-                                    value: `${item.name.toLowerCase()}-${item.id}`,
-                                }))}
+                            options={solanaChains.map((item) => ({
+                                ...item,
+                                label: item.name,
+                                value: item.id,
+                            }))}
                             getPopupContainer={(triggerNode) => triggerNode.parentNode}
                         ></Select>
                     </h3>
@@ -270,9 +274,9 @@ export const WalletInformation = () => {
                                 onClick={() => getSolanaBalance()}
                                 style={{ marginLeft: 5, color: '#1890ff', cursor: 'pointer' }}
                             />
-                            {solanaChainInfo.faucetUrl && (
+                            {!!solanaChainInfo.custom?.faucetUrl && (
                                 <PlusSquareOutlined
-                                    onClick={() => openWindow(solanaChainInfo.faucetUrl)}
+                                    onClick={() => openWindow((solanaChainInfo.custom?.faucetUrl || '') as string)}
                                     style={{ marginLeft: 10, color: '#1890ff', cursor: 'pointer' }}
                                 />
                             )}

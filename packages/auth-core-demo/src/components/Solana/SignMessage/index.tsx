@@ -1,5 +1,5 @@
 import { ArrowIcon } from '@/components/icons';
-import { useConnect, useSolana } from '@particle-network/auth-core-modal';
+import { useConnect, useSolana } from '@particle-network/authkit';
 import { Button, Input, notification } from 'antd';
 import bs58 from 'bs58';
 import { useState } from 'react';
@@ -16,7 +16,7 @@ function SignMessage() {
     const signMessage = async () => {
         setLoading(1);
         try {
-            const signature = await solanaSignMessage(Buffer.from(message || personalSignMessage));
+            const { signature } = await solanaSignMessage(Buffer.from(message || personalSignMessage));
             notification.success({
                 message: 'Sign Message Success',
                 description: bs58.encode(signature),

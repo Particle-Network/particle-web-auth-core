@@ -2,7 +2,7 @@ import { ArrowIcon } from '@/components/icons';
 import events from '@/utils/eventBus';
 import { isMobile, shortString } from '@/utils/index';
 import type { CreateSessionKeyOptions, SessionKey, UserOpBundle, UserOpParams } from '@particle-network/aa';
-import { useConnect, useCustomize, useEthereum } from '@particle-network/auth-core-modal';
+import { useConnect, useCustomize, useEthereum } from '@particle-network/authkit';
 import { ComboTestnet } from '@particle-network/chains';
 import { useRequest } from 'ahooks';
 import { Button, Space, Table, message, notification } from 'antd';
@@ -126,7 +126,7 @@ const AASessionKey = () => {
                         message: 'Send UserOp Success',
                         description: txHash,
                         onClick: () => {
-                            window.open(`${chainInfo?.blockExplorerUrl}/tx/${txHash}`);
+                            window.open(`${chainInfo.blockExplorers?.default.url}/tx/${txHash}`);
                         },
                     });
                 } else {
@@ -212,7 +212,7 @@ const AASessionKey = () => {
                         message: 'Send UserOp Success',
                         description: txHash,
                         onClick: () => {
-                            window.open(`${chainInfo?.blockExplorerUrl}/tx/${txHash}`);
+                            window.open(`${chainInfo?.blockExplorers?.default.url}/tx/${txHash}`);
                         },
                     });
                     getTokenBalance();

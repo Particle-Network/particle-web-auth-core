@@ -1,9 +1,11 @@
+import { getEVMChainInfoById, getSolanaChainInfoById } from '@/utils/index';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { AuthType, type ConnectParam } from '@particle-network/auth-core';
-import { isValidE164PhoneNumber, isValidEmail, useConnect, useCustomize } from '@particle-network/auth-core-modal';
-import { ParticleChains, chains, type Chain } from '@particle-network/chains';
+import { isValidE164PhoneNumber, isValidEmail, useConnect, useCustomize } from '@particle-network/authkit';
+import { chains } from '@particle-network/chains';
 import { Button, Input, Popover, Select, Switch, message } from 'antd';
 import { useRef, useState } from 'react';
+import type { Chain } from 'viem/chains';
 
 const loginMethods = [
     {
@@ -129,7 +131,7 @@ export const ConnectDashboard = () => {
             };
         }
         setLoginLoading(true);
-        connect(options)
+        connect(options as any)
             .then(() => {
                 console.log('connect success');
             })
@@ -148,7 +150,11 @@ export const ConnectDashboard = () => {
             setConnectChain(undefined);
             setAuthorize(false);
         } else {
-            setConnectChain(ParticleChains[value]);
+            let chain = getSolanaChainInfoById(Number(value.split('-')[1] || 0));
+            if (!chain) {
+                chain = getEVMChainInfoById(Number(value.split('-')[1] || 0));
+            }
+            setConnectChain(chain);
         }
     };
 
@@ -218,7 +224,6 @@ export const ConnectDashboard = () => {
     return (
         <div className="login-box card">
             <h2 className="login-box-title">Connect Auth Core</h2>
-
             <div className="login-option-item">
                 Connect Chain
                 <Select
@@ -241,7 +246,6 @@ export const ConnectDashboard = () => {
                     ]}
                 />
             </div>
-
             <div className="login-option-item">
                 Authorize
                 <Switch
@@ -257,7 +261,6 @@ export const ConnectDashboard = () => {
                     }}
                 ></Switch>
             </div>
-
             {authorize && (
                 <>
                     <div className="login-option-item">
@@ -279,7 +282,6 @@ export const ConnectDashboard = () => {
                     )}
                 </>
             )}
-
             <div className="login-option-item">
                 <div>
                     OAuth Prompt
@@ -299,7 +301,6 @@ export const ConnectDashboard = () => {
                     ]}
                 />
             </div>
-
             {selectAuthType !== AuthType.jwt && (
                 <>
                     <p className="center-center" style={{ marginTop: 16, marginBottom: 6 }}>
@@ -326,7 +327,6 @@ export const ConnectDashboard = () => {
                     <div ref={containerRef}></div>
                 </>
             )}
-
             {selectAuthType === AuthType.jwt && (
                 <p className="center-center" style={{ marginTop: 16 }}>
                     <Input.TextArea
@@ -337,7 +337,6 @@ export const ConnectDashboard = () => {
                     />
                 </p>
             )}
-
             <p className="center-center">
                 <Button
                     loading={loginLoading || connectionStatus === 'connecting'}
@@ -348,7 +347,6 @@ export const ConnectDashboard = () => {
                     Connect
                 </Button>
             </p>
-
             <div className="login-methods">
                 {loginMethods.map((item, index) => {
                     return (

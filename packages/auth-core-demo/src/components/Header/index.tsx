@@ -36,17 +36,17 @@ const Header = (props: Props) => {
                 }
             },
         },
-        {
-            label: <span>ConnectKit</span>,
-            key: 'ConnectKit',
-            onClick: () => {
-                if (router.pathname.includes('/connect')) {
-                    router.reload();
-                } else {
-                    router.push('/connect.html');
-                }
-            },
-        },
+        // {
+        //     label: <span>ConnectKit</span>,
+        //     key: 'ConnectKit',
+        //     onClick: () => {
+        //         if (router.pathname.includes('/connect')) {
+        //             router.reload();
+        //         } else {
+        //             router.push('/connect.html');
+        //         }
+        //     },
+        // },
         {
             label: <span>Web3Modal</span>,
             key: 'Web3Modal',

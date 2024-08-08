@@ -1,5 +1,5 @@
 import { SafetyCertificateTwoTone } from '@ant-design/icons';
-import { useConnect, useCustomize, useEthereum } from '@particle-network/auth-core-modal';
+import { useConnect, useCustomize, useEthereum } from '@particle-network/authkit';
 import { useRequest } from 'ahooks';
 import { Button, message } from 'antd';
 import { useEffect, useState } from 'react';

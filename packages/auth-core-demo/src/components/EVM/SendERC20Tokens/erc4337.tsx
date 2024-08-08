@@ -1,6 +1,6 @@
 import { ArrowIcon } from '@/components/icons';
 import { toWei } from '@/utils/number-utils';
-import { useConnect, useEthereum } from '@particle-network/auth-core-modal';
+import { useConnect, useEthereum } from '@particle-network/authkit';
 import { Button, Input, InputNumber, message, notification } from 'antd';
 import { Interface } from 'ethers';
 import { useState } from 'react';
@@ -50,7 +50,7 @@ function ERC4337SendERC20Tokens() {
                     message: 'Send Transaction Success',
                     description: txHash,
                     onClick: () => {
-                        window.open(`${chainInfo?.blockExplorerUrl}/tx/${txHash}`);
+                        window.open(`${chainInfo?.blockExplorers?.default.url}/tx/${txHash}`);
                     },
                 });
             } else {

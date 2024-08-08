@@ -16,7 +16,7 @@
         "@marsidev/react-turnstile": "^0.2.3",
         "@nbfe/react-color": "^0.3.0",
         "@particle-network/aa": "^1.5.1",
-        "@particle-network/auth-core-modal": "^1.5.0",
+        "@particle-network/authkit":"2.0.0-alpha.0",
         "@particle-network/connectkit": "^1.4.7",
         "@particle-network/chains": "^1.5.6",
         "@svgr/webpack": "^8.1.0",
@@ -43,6 +43,7 @@
         "@types/lodash": "^4.14.201",
         "env-cmd": "^10.1.0",
         "eslint": "^8",
+        "code-inspector-plugin": "^0.14.2",
         "eslint-config-next": "13.5.4",
         "sass": "^1.68.0",
         "sass-loader": "^12.3.0"

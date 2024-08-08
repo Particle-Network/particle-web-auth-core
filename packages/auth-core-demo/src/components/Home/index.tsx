@@ -1,4 +1,5 @@
-import EVM from '@/components/EVM';
+'use client';
+
 import { DiscordIcon } from '@/components/icons';
 import { openWindow } from '@/utils/index';
 import {
@@ -11,20 +12,28 @@ import {
 } from '@ant-design/icons';
 import { AAWrapProvider, SendTransactionMode, SmartAccount } from '@particle-network/aa';
 import { type UserInfo } from '@particle-network/auth-core';
-import { useConnect, useCustomize, useEthereum } from '@particle-network/auth-core-modal';
+import { useConnect, useCustomize, useEthereum } from '@particle-network/authkit';
 import { Popover, Skeleton, Tag, message } from 'antd';
+import dynamic from 'next/dynamic';
 import { isServer } from 'pages/_app';
 import QRCode from 'qrcode.react';
 import { useEffect } from 'react';
 import Web3 from 'web3';
 import aaOptions from '../../config/erc4337';
 import { ConnectDashboard } from '../ConnectDashboard';
-import DemoSetting from '../DemoSetting';
 import Header from '../Header';
-import Solana from '../Solana';
 import { WalletInformation } from '../WalletInformation';
-
 import styles from './index.module.scss';
+
+const DemoSetting = dynamic(() => import('../DemoSetting'), {
+    ssr: false,
+});
+const EVM = dynamic(() => import('../EVM'), {
+    ssr: false,
+});
+const Solana = dynamic(() => import('../Solana'), {
+    ssr: false,
+});
 
 function Home() {
     const { connected, connectionStatus, setSocialConnectCallback } = useConnect();

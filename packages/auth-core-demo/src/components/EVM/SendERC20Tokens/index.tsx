@@ -1,10 +1,9 @@
 import { ArrowIcon } from '@/components/icons';
 import { toWei } from '@/utils/number-utils';
-import { useConnect, useEthereum } from '@particle-network/auth-core-modal';
-import { chains } from '@particle-network/chains';
+import { useConnect, useEthereum } from '@particle-network/authkit';
 import { Button, Input, InputNumber, message, notification } from 'antd';
 import { useState } from 'react';
-import { isValidEVMAddress } from '../../../utils';
+import { getEVMChainInfoById, isValidEVMAddress } from '../../../utils';
 
 function SendERC20Tokens() {
     const [loading, setLoading] = useState(0);
@@ -61,12 +60,12 @@ function SendERC20Tokens() {
                 gasLevel: 'high',
                 chainId: specifiedChainId,
             });
-            const chainInfo = chains.getEVMChainInfoById(specifiedChainId || chainId);
+            const chainInfo = getEVMChainInfoById(specifiedChainId || chainId);
             notification.success({
                 message: 'Send Transaction Success',
                 description: txHash,
                 onClick: () => {
-                    window.open(`${chainInfo?.blockExplorerUrl}/tx/${txHash}`);
+                    window.open(`${chainInfo?.blockExplorers?.default.url}/tx/${txHash}`);
                 },
             });
         } catch (e: any) {

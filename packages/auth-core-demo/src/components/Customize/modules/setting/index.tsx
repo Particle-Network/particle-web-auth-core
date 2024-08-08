@@ -1,7 +1,7 @@
 import { toHexString } from '@/utils/index';
 //@ts-ignore
 import { ChromePicker } from '@nbfe/react-color';
-import { useCustomize } from '@particle-network/auth-core-modal';
+import { useCustomize } from '@particle-network/authkit';
 import {
     Button,
     Col,

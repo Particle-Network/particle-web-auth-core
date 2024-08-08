@@ -1,5 +1,5 @@
 import { SafetyCertificateTwoTone } from '@ant-design/icons';
-import { useConnect, useSolana } from '@particle-network/auth-core-modal';
+import { useConnect, useSolana } from '@particle-network/authkit';
 import { useRequest } from 'ahooks';
 import { Button, message } from 'antd';
 import SolanaAllTransaction from './AllTransaction';

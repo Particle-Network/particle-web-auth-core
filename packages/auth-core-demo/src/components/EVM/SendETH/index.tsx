@@ -1,7 +1,8 @@
 import { ArrowIcon } from '@/components/icons';
+import { getEVMChainInfoById } from '@/utils/index';
 import { toHex, toWei } from '@/utils/number-utils';
 import { GasFeeMode, tronAddressFromHex } from '@particle-network/auth-core';
-import { useConnect, useEthereum } from '@particle-network/auth-core-modal';
+import { useConnect, useEthereum } from '@particle-network/authkit';
 import { chains } from '@particle-network/chains';
 import { Button, Input, InputNumber, message, notification } from 'antd';
 import { useMemo, useState } from 'react';
@@ -44,13 +45,12 @@ function SendETH() {
                 chainId: specifiedChainId,
                 gasLevel: GasFeeMode.high,
             });
-
-            const chainInfo = chains.getEVMChainInfoById(specifiedChainId || chainId);
+            const chainInfo = getEVMChainInfoById(specifiedChainId || chainId);
             notification.success({
                 message: 'Send Transaction Success',
                 description: txHash,
                 onClick: () => {
-                    window.open(`${chainInfo?.blockExplorerUrl}/tx/${txHash}`);
+                    window.open(`${chainInfo?.blockExplorers?.default.url}/tx/${txHash}`);
                 },
             });
         } catch (error: any) {
@@ -72,12 +72,12 @@ function SendETH() {
                 type: '0x2',
                 chainId: specifiedChainId,
             });
-            const chainInfo = chains.getEVMChainInfoById(specifiedChainId || chainId);
+            const chainInfo = getEVMChainInfoById(specifiedChainId || chainId);
             notification.success({
                 message: 'Send Transaction Success',
                 description: txHash,
                 onClick: () => {
-                    window.open(`${chainInfo?.blockExplorerUrl}/tx/${txHash}`);
+                    window.open(`${chainInfo?.blockExplorers?.default.url}/tx/${txHash}`);
                 },
             });
         } catch (error: any) {

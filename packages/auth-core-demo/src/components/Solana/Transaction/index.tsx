@@ -1,10 +1,9 @@
 import { ArrowIcon } from '@/components/icons';
-import { useConnect, useSolana } from '@particle-network/auth-core-modal';
-import { chains } from '@particle-network/chains';
+import { useConnect, useSolana } from '@particle-network/authkit';
 import { PublicKey, SystemProgram, Transaction } from '@solana/web3.js';
 import { Button, Input, InputNumber, notification } from 'antd';
 import { useState } from 'react';
-import { isValidSolanaAddress } from '../../../utils';
+import { getSolanaChainInfoById, isValidSolanaAddress } from '../../../utils';
 
 function Transcation() {
     const [loading, setLoading] = useState<number>(0);
@@ -71,14 +70,16 @@ function Transcation() {
             // // make a versioned transaction
             // const transactionV0 = new VersionedTransaction(messageV0);
 
-            const result = await solanaSignAndSendTransaction(tx, specifiedChainId);
-            const chainInfo = chains.getSolanaChainInfoById(specifiedChainId || chainId);
+            const { signature } = await solanaSignAndSendTransaction(tx, specifiedChainId);
+            const chainInfo = getSolanaChainInfoById(specifiedChainId || chainId);
             notification.success({
                 message: 'Send Transaction Success',
-                description: result,
+                description: signature,
                 onClick: () => {
                     window.open(
-                        `${chainInfo?.blockExplorerUrl}/tx/${result}?cluster=${chainInfo?.network.toLowerCase()}`
+                        `${chainInfo?.blockExplorers?.default.url}/tx/${signature}?cluster=${(
+                            (chainInfo?.custom?.network || '') as string
+                        )?.toLowerCase?.()}`
                     );
                 },
             });

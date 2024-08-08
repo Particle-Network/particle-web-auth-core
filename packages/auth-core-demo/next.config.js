@@ -1,4 +1,5 @@
 const path = require('path');
+const { codeInspectorPlugin } = require('code-inspector-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 /** @type {import('next').NextConfig} */
@@ -53,6 +54,8 @@ const nextConfig = {
                     openAnalyzer: false,
                 })
             );
+        } else {
+            config.plugins.push(codeInspectorPlugin({ bundler: 'webpack', editor: 'code' }));
         }
 
         // fix: more than one React when native link

@@ -2,7 +2,7 @@ import { ArrowIcon } from '@/components/icons';
 import { personalSignMessage } from '@/utils/config';
 import { recoverPersonalSignature } from '@metamask/eth-sig-util';
 import { tronAddressFromHex } from '@particle-network/auth-core';
-import { useConnect, useEthereum } from '@particle-network/auth-core-modal';
+import { useConnect, useEthereum } from '@particle-network/authkit';
 import { Button, Checkbox, Input, message, notification } from 'antd';
 import { useState } from 'react';
 import styles from './index.module.scss';

@@ -5043,6 +5043,59 @@
     lzutf8 "^0.6.3"
     uuid "^9.0.1"
 
+"@particle-network/auth-core@^2.0.0-alpha.0":
+  version "2.0.0-alpha.0"
+  resolved "https://registry.npmjs.org/@particle-network/auth-core/-/auth-core-2.0.0-alpha.0.tgz#1dbced47385e5caf1916e62ff82f3567c13301c4"
+  integrity sha512-ucrs0Ju3PiJbKkFGtv39w8fVkUUzJXs5UE7WfcfpT3+uZL0rphsJuKBhhFBpXyaOoLt/JIyw+zt9NChMykLN+A==
+  dependencies:
+    "@aws-sdk/client-cognito-identity" "^3.58.0"
+    "@aws-sdk/client-kms" "^3.58.0"
+    "@aws-sdk/credential-providers" "^3.58.0"
+    "@ethereumjs/tx" "^4.2.0"
+    "@ethereumjs/util" "^8.1.0"
+    "@ethersproject/bignumber" "^5.7.0"
+    "@ethersproject/units" "^5.7.0"
+    "@metamask/eth-sig-util" "^7.0.0"
+    "@metamask/rpc-errors" "^6.0.0"
+    "@particle-network/analytics" "^1.0.1"
+    "@particle-network/chains" ">=1.3.8"
+    "@particle-network/thresh-sig" "^0.7.8"
+    "@solana/web3.js" "^1.73.0"
+    axios "^1.5.0"
+    base64url "^3.0.1"
+    bs58 "^5.0.0"
+    crypto-js "^4.1.1"
+    fast-json-stable-stringify "^2.1.0"
+    lzutf8 "^0.6.3"
+    uuid "^9.0.1"
+
+"@particle-network/authkit@2.0.0-alpha.0":
+  version "2.0.0-alpha.0"
+  resolved "https://registry.npmjs.org/@particle-network/authkit/-/authkit-2.0.0-alpha.0.tgz#d1191dc0af5ec8f70e39d94b36425e51e98d890c"
+  integrity sha512-X7QM5LaYdHCaVbpshPVHrIhtIrmaaFMulsgyYDFY4TCYOFUBXcuwrBabHgX0BlxDBd+sERxWMLXR2wIzAmPxIA==
+  dependencies:
+    "@particle-network/analytics" "^1.0.1"
+    "@particle-network/auth-core" "^2.0.0-alpha.0"
+    "@solana/spl-token" "^0.2.0"
+    ahooks "^3.7.8"
+    antd "^4"
+    bn.js "^5.2.1"
+    country-flag-icons "^1.4.26"
+    dayjs "^1.11.7"
+    ethjs-unit "^0.1.6"
+    i18next "^23.2.3"
+    json-toy "^2.0.2"
+    libphonenumber-js "^1.10.36"
+    lodash "^4.17.21"
+    lottie-react "^2.4.0"
+    lzutf8 "^0.6.2"
+    numbro "^2.3.6"
+    qs "^6.10.3"
+    react-copy-to-clipboard "^5.1.0"
+    react-i18next "^13.3.0"
+    react-shadow "^20.5.0"
+    uuid "^8.3.2"
+
 "@particle-network/chains@*", "@particle-network/chains@>=1.3.8", "@particle-network/chains@^1.5.6":
   version "1.5.6"
   resolved "https://registry.npmjs.org/@particle-network/chains/-/chains-1.5.6.tgz#950ece16c879d2541457fce3770291e3f4e5a669"
@@ -7245,6 +7298,17 @@
     estree-walker "^2.0.2"
     source-map-js "^1.2.0"
 
+"@vue/compiler-core@3.4.36":
+  version "3.4.36"
+  resolved "https://registry.npmjs.org/@vue/compiler-core/-/compiler-core-3.4.36.tgz#4e28dfcbaa8a85e135f7a94c44372b6d52329e42"
+  integrity sha512-qBkndgpwFKdupmOPoiS10i7oFdN7a+4UNDlezD0GlQ1kuA1pNrscg9g12HnB5E8hrWSuEftRsbJhL1HI2zpJhg==
+  dependencies:
+    "@babel/parser" "^7.24.7"
+    "@vue/shared" "3.4.36"
+    entities "^5.0.0"
+    estree-walker "^2.0.2"
+    source-map-js "^1.2.0"
+
 "@vue/compiler-dom@3.4.21":
   version "3.4.21"
   resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.4.21.tgz#0077c355e2008207283a5a87d510330d22546803"
@@ -7260,6 +7324,14 @@
   dependencies:
     "@vue/compiler-core" "3.4.29"
     "@vue/shared" "3.4.29"
+
+"@vue/compiler-dom@^3.2.47":
+  version "3.4.36"
+  resolved "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.4.36.tgz#32f5f65d1fb242211df2ddc65a336779cd8b974c"
+  integrity sha512-eEIjy4GwwZTFon/Y+WO8tRRNGqylaRlA79T1RLhUpkOzJ7EtZkkb8MurNfkqY6x6Qiu0R7ESspEF7GkPR/4yYg==
+  dependencies:
+    "@vue/compiler-core" "3.4.36"
+    "@vue/shared" "3.4.36"
 
 "@vue/compiler-sfc@3.4.21":
   version "3.4.21"
@@ -7399,6 +7471,11 @@
   version "3.4.29"
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.4.29.tgz#84908c284e88a269f8bceee59707b14eb4b2d284"
   integrity sha512-hQ2gAQcBO/CDpC82DCrinJNgOHI2v+FA7BDW4lMSPeBpQ7sRe2OLHWe5cph1s7D8DUQAwRt18dBDfJJ220APEA==
+
+"@vue/shared@3.4.36":
+  version "3.4.36"
+  resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.4.36.tgz#7551f41684966acb6a307152b49a8308e7f69203"
+  integrity sha512-fdPLStwl1sDfYuUftBaUVn2pIrVFDASYerZSrlBvVBfylObPA1gtcWJHy5Ox8jLEJ524zBibss488Q3SZtU1uA==
 
 "@wagmi/connectors@4.1.14":
   version "4.1.14"
@@ -8982,6 +9059,13 @@ async-validator@^4.0.0, async-validator@^4.1.0:
   resolved "https://registry.npmjs.org/async-validator/-/async-validator-4.2.5.tgz"
   integrity sha512-7HhHjtERjqlNbZtqNqy2rckN/SpOOlmDliet+lP7k+eKZEjPk3DgyeU9lIXLdeLz0uBbbVp+9Qdow9wJWgwwfg==
 
+async@^2.6.4:
+  version "2.6.4"
+  resolved "https://registry.npmjs.org/async/-/async-2.6.4.tgz#706b7ff6084664cd7eae713f6f965433b5504221"
+  integrity sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==
+  dependencies:
+    lodash "^4.17.14"
+
 async@^3.2.3:
   version "3.2.4"
   resolved "https://registry.npmjs.org/async/-/async-3.2.4.tgz"
@@ -9733,6 +9817,14 @@ case-sensitive-paths-webpack-plugin@^2.4.0:
   resolved "https://registry.npmjs.org/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.4.0.tgz"
   integrity sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==
 
+chalk@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npmjs.org/chalk/-/chalk-4.1.1.tgz#c80b3fab28bf6371e6863325eee67e618b77e6ad"
+  integrity sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg==
+  dependencies:
+    ansi-styles "^4.1.0"
+    supports-color "^7.1.0"
+
 chalk@5.3.0:
   version "5.3.0"
   resolved "https://registry.npmjs.org/chalk/-/chalk-5.3.0.tgz"
@@ -10012,6 +10104,25 @@ coa@^2.0.2:
     "@types/q" "^1.5.1"
     chalk "^2.4.1"
     q "^1.1.2"
+
+code-inspector-core@0.14.2:
+  version "0.14.2"
+  resolved "https://registry.npmjs.org/code-inspector-core/-/code-inspector-core-0.14.2.tgz#1939c52974dde577410b0d4b04b4f4308d9eaf22"
+  integrity sha512-YnOxgiXDXPOXDYmqVB9hQVVa94/uDk65fxG33r5aRilWXW7EPINBiV6KEqWqKKZO/MWiyXbUPx/mmL6IrR2KQw==
+  dependencies:
+    "@vue/compiler-dom" "^3.2.47"
+    chalk "^4.1.1"
+    portfinder "^1.0.28"
+
+code-inspector-plugin@^0.14.2:
+  version "0.14.2"
+  resolved "https://registry.npmjs.org/code-inspector-plugin/-/code-inspector-plugin-0.14.2.tgz#dce8b26227585a95548f397ea6f252be10891ce1"
+  integrity sha512-FQAeTzA5nI7Q3x2HVdgOlenQC1DPDfGCoaM1tuhdLlXgTe34XpdV9dXD/wy4NqI2fIANwcNro30Kfg7Q1GavrQ==
+  dependencies:
+    chalk "4.1.1"
+    code-inspector-core "0.14.2"
+    vite-code-inspector-plugin "0.14.2"
+    webpack-code-inspector-plugin "0.14.2"
 
 code-point-at@^1.0.0:
   version "1.1.0"
@@ -11428,6 +11539,11 @@ entities@^4.2.0, entities@^4.4.0, entities@^4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/entities/-/entities-4.5.0.tgz"
   integrity sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==
+
+entities@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/entities/-/entities-5.0.0.tgz#b2ab51fe40d995817979ec79dd621154c3c0f62b"
+  integrity sha512-BeJFvFRJddxobhvEdm5GqHzRV/X+ACeuw0/BuuxsCh1EUZcAIz8+kYmBp/LrQuloy6K1f3a0M7+IhmZ7QnkISA==
 
 env-cmd@^10.1.0:
   version "10.1.0"
@@ -15943,7 +16059,7 @@ lodash.upperfirst@^4.3.1:
   resolved "https://registry.npmjs.org/lodash.upperfirst/-/lodash.upperfirst-4.3.1.tgz"
   integrity sha512-sReKOYJIJf74dhJONhU4e0/shzi1trVbSWDOhKYE5XV2O+H7Sb2Dihwuc7xWxVl+DgFPyTqIN3zMfT9cq5iWDg==
 
-lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.7.0:
+lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -16501,17 +16617,17 @@ mkdirp-infer-owner@^2.0.0:
     infer-owner "^1.0.4"
     mkdirp "^1.0.3"
 
-mkdirp@^1.0.3, mkdirp@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
-  integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
-
-mkdirp@~0.5.1:
+mkdirp@^0.5.6, mkdirp@~0.5.1:
   version "0.5.6"
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.6.tgz"
   integrity sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==
   dependencies:
     minimist "^1.2.6"
+
+mkdirp@^1.0.3, mkdirp@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
+  integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
 mlly@^1.1.0, mlly@^1.2.0, mlly@^1.4.2:
   version "1.4.2"
@@ -17715,6 +17831,15 @@ pony-cause@^2.1.10:
   version "2.1.10"
   resolved "https://registry.npmjs.org/pony-cause/-/pony-cause-2.1.10.tgz"
   integrity sha512-3IKLNXclQgkU++2fSi93sQ6BznFuxSLB11HdvZQ6JW/spahf/P1pAHBQEahr20rs0htZW0UDkM1HmA+nZkXKsw==
+
+portfinder@^1.0.28:
+  version "1.0.32"
+  resolved "https://registry.npmjs.org/portfinder/-/portfinder-1.0.32.tgz#2fe1b9e58389712429dc2bea5beb2146146c7f81"
+  integrity sha512-on2ZJVVDXRADWE6jnQaX0ioEylzgBpQk8r55NE4wjXW1ZxO+BgDlY6DXwj20i0V8eB4SenDQ00WEaxfiIQPcxg==
+  dependencies:
+    async "^2.6.4"
+    debug "^3.2.7"
+    mkdirp "^0.5.6"
 
 postcss-attribute-case-insensitive@^5.0.2:
   version "5.0.2"
@@ -19297,6 +19422,13 @@ react-shadow@^20.4.0:
   version "20.4.0"
   resolved "https://registry.npmjs.org/react-shadow/-/react-shadow-20.4.0.tgz"
   integrity sha512-sirvAmFja7Ss6MoyQbKWxaQ5IDTAW3Za3Tvegylfr5jXnwKZObHRIyiatefeNlskoGKfuPaZ8DNT052T0SUGcg==
+  dependencies:
+    humps "^2.0.1"
+
+react-shadow@^20.5.0:
+  version "20.5.0"
+  resolved "https://registry.npmjs.org/react-shadow/-/react-shadow-20.5.0.tgz#dbfe87be42c33b57aab88d11a547060ddc8be7f5"
+  integrity sha512-DHukRfWpJrFtZMcZrKrqU3ZwuHjTpTbrjnJdTGZQE3lqtC5ivBDVWqAVVW6lR3Lq6bhphjAbqaJU8NOoTRSCsg==
   dependencies:
     humps "^2.0.1"
 
@@ -22085,6 +22217,13 @@ viem@^1.0.0, viem@^1.1.4:
     isows "1.0.3"
     ws "8.13.0"
 
+vite-code-inspector-plugin@0.14.2:
+  version "0.14.2"
+  resolved "https://registry.npmjs.org/vite-code-inspector-plugin/-/vite-code-inspector-plugin-0.14.2.tgz#08e6bf789fd731fb1fc12836360c8193679388c3"
+  integrity sha512-k04yeefaMSjvZQW+GvxbzVjJb8fw5BycSrH7oNw6y3M11AwUlyqDmmL8OcO8b07ljhkPZ0bYVotfBCftXkYRyQ==
+  dependencies:
+    code-inspector-core "0.14.2"
+
 vite-node@^0.28.5:
   version "0.28.5"
   resolved "https://registry.npmjs.org/vite-node/-/vite-node-0.28.5.tgz"
@@ -22532,6 +22671,13 @@ webpack-bundle-analyzer@^4.9.1:
     picocolors "^1.0.0"
     sirv "^2.0.3"
     ws "^7.3.1"
+
+webpack-code-inspector-plugin@0.14.2:
+  version "0.14.2"
+  resolved "https://registry.npmjs.org/webpack-code-inspector-plugin/-/webpack-code-inspector-plugin-0.14.2.tgz#b472325a045a46ac58bb069edea94d874c6664d9"
+  integrity sha512-WQoOFuckY1dQp4xCgNfyzddER+6OMvedpaa+UMGlvu9Zqb1aSxHm9ss8qJo9OeuLkw41qiOlHvg9FGvST877uA==
+  dependencies:
+    code-inspector-core "0.14.2"
 
 webpack-dev-middleware@^5.3.1:
   version "5.3.3"

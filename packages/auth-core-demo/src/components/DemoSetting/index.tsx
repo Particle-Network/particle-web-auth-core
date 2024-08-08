@@ -1,9 +1,10 @@
-import { isJson, toNumber } from '@/utils/index';
+'use client';
+
+import { getEVMChainInfoById, isJson, toNumber } from '@/utils/index';
 import { LinkOutlined } from '@ant-design/icons';
 import { isNullish } from '@particle-network/auth-core';
-import type { Language } from '@particle-network/auth-core-modal';
-import { useCustomize, useEthereum } from '@particle-network/auth-core-modal';
-import { chains } from '@particle-network/chains';
+import type { Language, Theme } from '@particle-network/authkit';
+import { useCustomize, useEthereum } from '@particle-network/authkit';
 import { Button, Input, Modal, Select, Switch, message, notification } from 'antd';
 import { useRouter } from 'next/router';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -107,7 +108,7 @@ function DemoSetting() {
         const firstChainId = aaOptions.accountContracts[typeName as keyof typeof aaOptions.accountContracts].find(
             (item) => item.version === version
         )?.chainIds[0] as number;
-        const chain = chains.getEVMChainInfoById(firstChainId);
+        const chain = getEVMChainInfoById(firstChainId);
         if (chain) {
             await evmSwitchChain(firstChainId);
             setERC4337({
@@ -283,8 +284,8 @@ function DemoSetting() {
                 <div className="filter-item">
                     <div className="filter-label">Wallet Entrance</div>
                     <Switch
-                        defaultChecked={walletOptions?.visible ?? false}
-                        checked={walletOptions?.visible ?? false}
+                        defaultChecked={(typeof walletOptions === 'object' && walletOptions?.visible) ?? false}
+                        checked={(typeof walletOptions === 'object' && walletOptions?.visible) ?? false}
                         onChange={(value) => {
                             const wallet = walletOptions || {};
                             wallet.visible = value;
@@ -297,14 +298,13 @@ function DemoSetting() {
                         }}
                     />
                 </div>
-
                 <div className="filter-item">
                     <div className="filter-label">Wallet Theme</div>
                     <Select
-                        value={walletOptions?.themeType ?? 'light'}
+                        value={(typeof walletOptions === 'object' && walletOptions?.themeType) ?? 'light'}
                         onChange={(theme) => {
                             const wallet = walletOptions || {};
-                            wallet.themeType = theme;
+                            wallet.themeType = theme as Theme;
                             setWalletOptions(wallet);
                         }}
                         style={{ width: 100 }}
@@ -315,7 +315,6 @@ function DemoSetting() {
                         getPopupContainer={(triggerNode) => triggerNode.parentNode}
                     />
                 </div>
-
                 <div className="filter-item column">
                     <div className="filter-label">Custom Style</div>
                     <Button
@@ -331,7 +330,11 @@ function DemoSetting() {
                         autoSize={true}
                         className="filter-input"
                         placeholder="custom wallet style, json format"
-                        defaultValue={JSON.stringify(walletOptions?.customStyle) || ''}
+                        defaultValue={
+                            typeof walletOptions === 'object' && walletOptions !== null
+                                ? JSON.stringify(walletOptions.customStyle) || ''
+                                : ''
+                        }
                     />
                 </div>
             </div>

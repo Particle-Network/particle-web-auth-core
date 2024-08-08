@@ -1,5 +1,6 @@
 import { isValidAddress } from '@ethereumjs/util';
 import { isServer } from 'pages/_app';
+import type { Chain as ViemChain } from 'viem';
 
 export function shortString(str?: string): string {
     if (str) {
@@ -240,4 +241,25 @@ export const openWindow = (url: string | URL | undefined) => window.open(url);
 export const formatPng = (src = '') => {
     if (!src) return src;
     return src + (src.includes('?') ? '&' : '?') + 'x-oss-process=image/format,png';
+};
+
+export const getChainType = (chain: ViemChain): 'evm' | 'solana' => {
+    return (chain?.custom?.chainType as unknown as 'evm' | 'solana') || 'evm';
+};
+
+export const getEvmChains = (): ViemChain[] => {
+    const chains = (window as any).particleAuth.chains;
+    return chains.filter((c: ViemChain) => getChainType(c) === 'evm');
+};
+export const getSolanaChains = (): ViemChain[] => {
+    const chains = (window as any).particleAuth.chains;
+    return chains.filter((c: ViemChain) => getChainType(c) === 'solana');
+};
+
+export const getEVMChainInfoById = (id: number): ViemChain | undefined => {
+    return getEvmChains().find((c) => c.id === id);
+};
+
+export const getSolanaChainInfoById = (id: number): ViemChain | undefined => {
+    return getSolanaChains().find((c) => c.id === id);
 };
